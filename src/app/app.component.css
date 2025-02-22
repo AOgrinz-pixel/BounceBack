@@ -1,3 +1,7 @@
+.navbar {
+  position: fixed;
+}
+
 nav {
     background-color: #333;  /* Dark background color */
     color: white;            /* White text */
@@ -11,7 +15,7 @@ nav {
     width: 100%;
     z-index: 1000;           /* Ensure it stays on top of other content */
   }
-  
+
   /* Style for each link */
   nav a {
     color: white;
@@ -21,20 +25,25 @@ nav {
     border-radius: 5px;  /* Rounded corners */
     transition: background-color 0.3s ease;  /* Smooth transition */
   }
-  
+
   /* Hover effect for links */
   nav a:hover {
     background-color: #555;  /* Lighten the background on hover */
   }
-  
+
   /* Active link style */
   nav a.active {
     background-color: #007bff;  /* Highlight active link with blue */
     color: white;  /* Keep the text white */
     font-weight: bold;  /* Make the active link bold */
   }
-  
+
   /* Prevent content from being hidden under the fixed navbar */
   body {
     padding-top: 50px;  /* Adjust body content position to not overlap the navbar */
+    margin-top: 50px;
+  }
+
+  .main-content {
+    padding-top: 50px;
   }
