@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl, FormBuilder, Validators, MinValidator } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-leave-areview',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, HttpClientModule],
   templateUrl: './leave-areview.component.html',
   styleUrl: './leave-areview.component.css'
 })
@@ -39,9 +40,8 @@ export class LeaveAReviewComponent implements OnInit {
   // This function will save the user input when the form is submitted
   saveInput() {
     // You can now save the data, or send it to an API, etc.
-    console.log(this.userForm.value.companyName);
-    console.log(this.userForm.value.role);  
-    console.log(this.userForm.value.confidence);
+    const formData = this.userForm.value
+    console.log(this.userForm.value);
     this.submitted = true;
   }
 
