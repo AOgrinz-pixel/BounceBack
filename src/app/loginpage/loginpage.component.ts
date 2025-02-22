@@ -37,5 +37,9 @@ export class LoginpageComponent {
     this.router.navigate(['/home']);
   }
 
+  createUser(): void {
+    this.router.navigate(['/createuser']);
+  }
+
 }
 

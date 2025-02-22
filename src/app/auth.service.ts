@@ -11,6 +11,7 @@ export class AuthService {
   constructor(private http: HttpClient) {}
   private isLoggedIn = false;
   private success: any;
+  private user: any;
   
   login(credentials: { username: string, password: string }): Observable<boolean> {
     console.log(credentials);
@@ -24,10 +25,25 @@ export class AuthService {
       }
     );
     if (this.success == true) {
+      this.isLoggedIn = true;
       return of(true)
     }
     return of(false);
   }
+
+  createUser(credentials: { username: string, password: string }): Observable<boolean> {
+    return this.http.post('http://localhost:8080/login/create', credentials).pipe(
+      map((response: any) => {
+        console.log('User Created:', response); // Handle success response
+        return true;
+      }),
+      catchError((error) => {
+        console.error('Create User Error:', error); // Handle error response
+        return of(false);
+      })
+    );
+  }
+
 
   logout(): void {
     this.isLoggedIn = false;
