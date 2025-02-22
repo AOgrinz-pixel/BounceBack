@@ -2,8 +2,21 @@
 <link rel="stylesheet" href="company-display.component.css">
 <div class="company">
     <a [routerLink]="['/company', company.name]" class="nameStyle">{{ company.name }}</a>
-    <p class = "ratingStyle line1">{{ company.rating }}</p>
-    <p class = "competeStyle">{{ company.competitiveness }}</p>
-    <p class = "applyAgainStyle">{{ company.applyAgain }}</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Company Competitiveness</th>
+                <th>Company Rating</th>
+                <th>Apply Again</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ company.competitiveness }}</td>
+                <td>{{ company.rating }}</td>
+                <td>{{ company.applyAgain }}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 </body>
