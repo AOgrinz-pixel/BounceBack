@@ -3,11 +3,13 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClientModule, HttpClient } from '@angular/common/http';  // Assuming you need to make an HTTP request
 import { CommonModule } from '@angular/common';
 import { DisplayReviewComponent } from "./display-review/display-review.component";
+import { LeaveAReviewComponent } from "C:\\Users\\caitl\\IdeaProjects\\RateMyRejection\\src\\app\\leave-areview\\leave-areview.component"; // Import the LeaveAReviewComponent
+
 @Component({
   selector: 'app-company-page',
   templateUrl: './company-page.component.html',
   styleUrls: ['./company-page.component.css'],
-  imports: [HttpClientModule, DisplayReviewComponent, CommonModule],
+  imports: [HttpClientModule, DisplayReviewComponent, CommonModule, LeaveAReviewComponent],
   standalone: true
 })
 export class CompanyPageComponent implements OnInit {
