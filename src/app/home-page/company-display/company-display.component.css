@@ -1,21 +1,65 @@
+.company {
+  margin: 30px 0;
+  padding: 20px;
+  background-color: #fff;  /* White background for the company block */
+  border-radius: 8px;  /* Rounded corners for a modern feel */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+  transition: box-shadow 0.3s ease-in-out;  /* Smooth transition on hover */
+}
+
+.company:hover {
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);  /* Larger shadow on hover for interactivity */
+}
+
+/* Style for the company name link */
 .nameStyle {
-  font-size: 30px;
-  color: #a2acbd;
-  font-style: italic;
-  font-family: Ebrima, serif;
+  font-size: 22px;  /* Slightly larger font size */
+  font-weight: 600;  /* Bold weight for the name */
+  color: #3a5a9e;  /* Blue color for the company name */
+  text-decoration: none;  /* Remove underline from the link */
+  transition: color 0.3s ease;  /* Smooth color transition */
+  display: inline-block;  /* Ensure it's treated as an inline block */
+  margin-bottom: 15px;  /* Space between the name and the table */
 }
 
-.competeStyle {
-  font-size: 20px;
-  color: #a2acbd;
-  font-family: Ebrima, serif;
-  align-self: center;
+.nameStyle:hover {
+  color: #1e3d59;  /* Darker blue when hovered */
 }
 
-.ratingStyle {
-
+/* Table styling */
+table {
+  width: 100%;  /* Full width for the table */
+  border-collapse: collapse;  /* Clean, collapsed borders */
+  background-color: #f9f9f9;  /* Light background color for the table */
+  border-radius: 8px;  /* Rounded corners */
+  overflow: hidden;  /* Prevent overflow */
 }
 
-.applyAgainStyle {
+/* Style the table headers */
+th {
+  background-color: #3a5a9e;  /* Dark blue for the header */
+  color: white;  /* White text for contrast */
+  padding: 12px 15px;
+  font-weight: bold;
+  text-align: left;
+  text-transform: uppercase;  /* Uppercase letters for headers */
+  letter-spacing: 1px;  /* Slight spacing between letters */
+}
 
+/* Style the table cells */
+td {
+  padding: 12px 15px;  /* Padding for cells */
+  text-align: left;  /* Left-aligned text */
+  font-size: 16px;  /* Slightly larger font for better readability */
+  border-bottom: 1px solid #ddd;  /* Light grey border between rows */
+}
+
+
+/* Zebra striping for alternating rows */
+tr:nth-child(even) {
+  background-color: #f9f9f9;  /* Slightly lighter background for even rows */
+}
+
+tr:nth-child(odd) {
+  background-color: #ffffff;  /* White background for odd rows */
 }
