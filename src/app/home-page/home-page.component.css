@@ -107,3 +107,12 @@ body {
 }
 
 
+
+.top-image {
+  background-image: url('/assets/images/surround.png');
+  background-size: cover; /* Optional: Ensure it covers the div */
+  background-position: center; /* Optional: Center the image */
+  background-size: 1300px 400px;
+  background-repeat: no-repeat;
+  padding: 50px;
+}
