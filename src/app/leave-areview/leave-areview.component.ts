@@ -3,6 +3,7 @@ import { ReactiveFormsModule, FormGroup, FormControl, FormBuilder, Validators, M
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-leave-areview',
@@ -21,9 +22,10 @@ export class LeaveAReviewComponent implements OnInit {
   rejectOptions: string[] = ['Ghosted', 'Emailed', 'Phone Call', 'Other'];
   applyAgainOpts: string[] = ['Yes', 'No'];
   submitted = false;
-  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router, public authService: AuthService) {
     // Initialize the form controls inside the form group
     this.userForm = this.fb.group({
+      userName: new FormControl(authService.getUsername()),
       companyName: new FormControl(''),
       role: new FormControl(''),
       quality: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(5)]),
