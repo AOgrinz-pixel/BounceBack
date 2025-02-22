@@ -16,6 +16,7 @@
 <div *ngIf="filteredCompanies.length > 0">
   <h2>Companies</h2>
   <div *ngFor="let company of filteredCompanies">
+
     <app-company class="company-title" [company]="company"></app-company>
   </div>
 </div>
