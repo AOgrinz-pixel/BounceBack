@@ -45,4 +45,10 @@ export class CompanyPageComponent implements OnInit {
       console.log(this.companyReviews);
     });
   }
+
+  showReviewSlide = false;
+
+  toggleReviewSlide() {
+    this.showReviewSlide = !this.showReviewSlide; 
+  }
 }

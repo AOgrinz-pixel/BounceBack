@@ -6,10 +6,20 @@
 
 
 
-<app-leave-areview *ngIf="authService.isAuthenticated()"></app-leave-areview>
+<!-- Button to trigger the slide-up page -->
+ <div class="button-container">
+<button class="open-review-btn" *ngIf="authService.isAuthenticated()" (click)="toggleReviewSlide()">Leave a Review</button>
+</div>
+
+<!-- Sliding Page (Initially hidden) -->
+<div class="review-slide" [ngClass]="{'open': showReviewSlide}">
+  <app-leave-areview *ngIf="authService.isAuthenticated()"></app-leave-areview>
+  <button class="close-btn" (click)="toggleReviewSlide()">X</button>
+</div>
+
 
 <!-- If not authenticated, show a message or a login prompt -->
-<div *ngIf="!authService.isAuthenticated()">
+<div *ngIf="!authService.isAuthenticated()" class="not-logged-in">
   <p>Please log in to leave a review.</p>
 </div>
 

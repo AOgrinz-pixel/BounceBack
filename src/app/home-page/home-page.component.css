@@ -1,7 +1,8 @@
 /* Global Styles */
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #e0f7fa;  /* Light teal blue background */
+  background-color: #fff; /* White background for a cleaner look */
+  color: #000; /* Black text */
   margin: 0;
   padding: 0;
 }
@@ -17,55 +18,56 @@ body {
 .search-input {
   width: 80%;
   max-width: 500px;
-  padding: 15px;
+  padding: 12px;
   font-size: 16px;
-  border: 1px solid #ddd;
+  border: 1px solid #ccc; /* Light gray border */
   border-radius: 50px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
   outline: none;
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .search-input:focus {
-  border-color: #4285F4;
-  box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+  border-color: #000; /* Black border when focused */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Darker shadow on focus */
 }
 
 /* Container for the company items */
 .companies-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Two columns per row */
-  gap: 75px; /* Increased gap between items */
+  gap: 60px; /* Reduced gap to make it sleeker */
   margin: 0 20px;
   justify-items: center;
 }
 
 /* Each company card container */
 .company-item {
-  background-color: white;
+  background-color: #fff; /* White background */
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 4px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
   width: 100%;
   transition: box-shadow 0.3s ease;
+  border: 1px solid #e0e0e0; /* Light gray border */
 }
 
 .company-item:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), 0 6px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle hover shadow */
 }
 
 /* Styling for the "No Companies Found" message */
 .no-companies-message {
   text-align: center;
   font-size: 18px;
-  color: #666;
+  color: #555; /* Slightly darker gray for the text */
   padding: 40px 20px;
 }
 
 /* Mobile responsive behavior */
 @media (max-width: 768px) {
   .search-input {
-    width: 90%;
+    width: 90%; /* Slightly wider input on smaller screens */
   }
 
   .companies-list {
