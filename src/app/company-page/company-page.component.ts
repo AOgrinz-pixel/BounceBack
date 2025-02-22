@@ -4,6 +4,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';  // Assumin
 import { CommonModule } from '@angular/common';
 import { DisplayReviewComponent } from "./display-review/display-review.component";
 import { LeaveAReviewComponent } from "C:\\Users\\caitl\\IdeaProjects\\RateMyRejection\\src\\app\\leave-areview\\leave-areview.component"; // Import the LeaveAReviewComponent
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-company-page',
@@ -12,6 +13,8 @@ import { LeaveAReviewComponent } from "C:\\Users\\caitl\\IdeaProjects\\RateMyRej
   imports: [HttpClientModule, DisplayReviewComponent, CommonModule, LeaveAReviewComponent],
   standalone: true
 })
+
+
 export class CompanyPageComponent implements OnInit {
   companyData: any[] = [];
   companyReviews: any[] = [];
@@ -19,7 +22,8 @@ export class CompanyPageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private http: HttpClient
+    private http: HttpClient,
+    public authService: AuthService
   ) {}
 
   ngOnInit(): void {

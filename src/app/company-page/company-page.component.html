@@ -7,7 +7,14 @@
     </div>
   </div>
 
-<app-leave-areview></app-leave-areview>
+
+
+<app-leave-areview *ngIf="authService.isAuthenticated()"></app-leave-areview>
+
+<!-- If not authenticated, show a message or a login prompt -->
+<div *ngIf="!authService.isAuthenticated()">
+  <p>Please log in to leave a review.</p>
+</div>
 
 
 
