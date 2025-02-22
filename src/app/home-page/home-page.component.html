@@ -3,16 +3,21 @@
 </head>
 
 <body>
+
 <p>Total Reviews: {{ totalReviewsCount }}</p>
-<div class="search-term">
-  <input
-    type="text"
-    [(ngModel)]="searchTerm"
-    placeholder="Search companies by name"
-    (input)="onSearch()"
-    class =  "search-input"
-  />
-</div>
+
+  <div class="search-title">You suck! ... but so does everyone else!</div>
+  <!-- Search Bar Section -->
+  <div class="search-container">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      placeholder="Search companies by name"
+      (input)="onSearch()"
+      class="search-input"
+    />
+  </div>
+
 
   <!-- Companies Display Section -->
   <div *ngIf="filteredCompanies.length > 0" class="companies-list">
