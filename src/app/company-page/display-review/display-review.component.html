@@ -1,0 +1,28 @@
+<div class="single-review">
+<table>
+    <thead>
+      <tr>
+        <th>Role</th>
+        <th>Quality of Rejection</th>
+        <th>Confidence of Last Interview</th>
+        <th>Competitiveness of Role</th>
+        <th>Rejection Type</th>
+        <th># of Rounds</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ review.role }}</td>
+            <td>{{ review.quality }}</td>
+            <td>{{ review.confidence }}</td>
+            <td>{{ review.competitiveness }}</td>
+            <td>{{ review.selected }}</td>
+            <td>{{ review.numRounds }}</td>
+        </tr>
+    </tbody>
+  </table>
+  <div *ngIf="review.other">
+    <h3>Other Comments</h3>
+    <p>{{ review.other }}</p>
+</div>
+</div>
