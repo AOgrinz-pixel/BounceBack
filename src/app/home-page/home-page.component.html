@@ -4,8 +4,7 @@
 
 <body>
 
-<div *ngIf="companies.length > 0">
-  <h2>Companies</h2>
+<div *ngIf="companies.length > 0" class="big-container">
   <div *ngFor="let company of companies">
     <app-company class="company-title" [company]="company"></app-company>
   </div>

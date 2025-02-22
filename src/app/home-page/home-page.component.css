@@ -20,6 +20,8 @@ body {
   text-align: center;
   display: flex;
   align-items: center;
+  padding-top: 20px;
+
 }
 a {
   color: white;
@@ -32,3 +34,6 @@ h2 {
 }
 
 
+.big-container {
+  padding-top: 20px;
+}
