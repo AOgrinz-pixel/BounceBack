@@ -16,21 +16,25 @@ export class AuthService {
   
   login(credentials: { username: string, password: string }): Observable<boolean> {
     console.log(credentials);
-    this.http.post('http://localhost:8080/login', credentials).subscribe(
-      (response) => {
-        console.log('API Response:', response); // Handle success response
-        this.success = response;
-      },
-      (error) => {
-        console.error('API Error:', error); // Handle error response
-      }
+    return this.http.post('http://localhost:8080/login', credentials).pipe(
+      map((response: any) => {
+        // Handle successful response
+        console.log('API Response:', response); 
+        // Assuming your response has a success field (update this based on actual response)
+        if (response) {
+          this.isLoggedIn = true;
+          this.username = credentials.username;
+          return true;
+        } else {
+          return false;
+        }
+      }),
+      catchError((error) => {
+        // Handle error response
+        console.error('API Error:', error);
+        return of(false); // Return false if the login fails
+      })
     );
-    if (this.success == true) {
-      this.isLoggedIn = true;
-      this.username = credentials.username
-      return of(true)
-    }
-    return of(false);
   }
 
   createUser(credentials: { username: string, password: string }): Observable<boolean> {

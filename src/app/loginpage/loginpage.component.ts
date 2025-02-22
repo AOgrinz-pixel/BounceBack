@@ -22,8 +22,7 @@ export class LoginpageComponent implements OnInit {
   }
   ngOnInit(): void {
     // Initialize any necessary data or state here
-    this.authService.logout();
-    console.log(this.authService.isAuthenticated());
+    //this.authService.logout();
   }
 
   onSubmit(): void {

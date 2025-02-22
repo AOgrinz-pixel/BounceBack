@@ -14,6 +14,7 @@ import { CreateUserComponent } from './app/create-user/create-user.component';
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter([
+      { path: '', redirectTo: 'login', pathMatch: 'full' },  // Default route
       {
         path: '',
         component: LayoutComponent,
@@ -25,7 +26,6 @@ bootstrapApplication(AppComponent, {
         ]
       },
       { path: 'login', component: LoginpageComponent },
-      { path: '', redirectTo: 'login', pathMatch: 'full' },  // Default route
       { path: 'createuser', component: CreateUserComponent },
     ]),
     provideHttpClient()
