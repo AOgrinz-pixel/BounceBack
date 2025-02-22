@@ -90,4 +90,8 @@
   
   body {
     background-image: url('/assets/images/behindloin.jpg');
-  }
+    background-size: contain;  /* Make the image smaller but preserve aspect ratio */
+    background-position: center center;  /* Center the image horizontally and vertically */
+    background-repeat: no-repeat;  /* Ensure the image doesn't repeat */
+    background-color: #fff; /* Optional: Set a fallback background color */
+}
