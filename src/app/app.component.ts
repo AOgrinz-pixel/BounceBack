@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
 import { CompanyPageComponent } from './company-page/company-page.component';
 import { LeaveAReviewComponent } from './leave-areview/leave-areview.component';
+import { LoginpageComponent } from './loginpage/loginpage.component';
 
 const appRoutes: Routes = [
+  { path: 'login', component: LoginpageComponent },
   { path: 'home', component: HomePageComponent },
   { path: 'company/:name', component: CompanyPageComponent },
   { path: 'review', component: LeaveAReviewComponent },
-  {path: '', redirectTo: '/home', pathMatch: 'full'}
+  {path: '', redirectTo: 'login', pathMatch: 'full'}
 ];
 
 @Component({
