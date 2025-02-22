@@ -10,19 +10,23 @@ import { map, catchError } from 'rxjs/operators';
 export class AuthService {
   constructor(private http: HttpClient) {}
   private isLoggedIn = false;
+  private success: any;
   
   login(credentials: { username: string, password: string }): Observable<boolean> {
-    return this.http.post('https://localhost:8080/login', credentials).pipe(
-      map((response: any) => {
+    console.log(credentials);
+    this.http.post('http://localhost:8080/login', credentials).subscribe(
+      (response) => {
         console.log('API Response:', response); // Handle success response
-        this.isLoggedIn = true;
-        return true;
-      }),
-      catchError((error) => {
+        this.success = response;
+      },
+      (error) => {
         console.error('API Error:', error); // Handle error response
-        return of(false);
-      })
+      }
     );
+    if (this.success == true) {
+      return of(true)
+    }
+    return of(false);
   }
 
   logout(): void {
