@@ -3,8 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClientModule, HttpClient } from '@angular/common/http';  // Assuming you need to make an HTTP request
 import { CommonModule } from '@angular/common';
 import { DisplayReviewComponent } from "./display-review/display-review.component";
-import { LeaveAReviewComponent } from "C:\\Users\\caitl\\IdeaProjects\\RateMyRejection\\src\\app\\leave-areview\\leave-areview.component"; // Import the LeaveAReviewComponent
-import { AuthService } from '../auth.service';
+import { LeaveAReviewComponent } from '../leave-areview/leave-areview.component';
 
 @Component({
   selector: 'app-company-page',
@@ -13,8 +12,6 @@ import { AuthService } from '../auth.service';
   imports: [HttpClientModule, DisplayReviewComponent, CommonModule, LeaveAReviewComponent],
   standalone: true
 })
-
-
 export class CompanyPageComponent implements OnInit {
   companyData: any[] = [];
   companyReviews: any[] = [];
@@ -22,14 +19,12 @@ export class CompanyPageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private http: HttpClient,
-    public authService: AuthService
+    private http: HttpClient
   ) {}
 
   ngOnInit(): void {
     // Get the 'id' parameter from the route
 
-    console.log("HEERRERERERERERERE");
     this.route.paramMap.subscribe(params => {
       const companyName = params.get('name');
       this.fetchCompanyData(companyName);

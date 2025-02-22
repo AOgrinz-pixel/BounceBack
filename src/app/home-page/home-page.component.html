@@ -3,27 +3,24 @@
 </head>
 
 <body>
-<div class = "search-term">
+<div>
   <input
     type="text"
     [(ngModel)]="searchTerm"
     placeholder="Search companies by name"
     (input)="onSearch()"
-    class="search-input"
   />
 </div>
 
 
 <div *ngIf="filteredCompanies.length > 0">
-  <h2 class="companies-header">Companies</h2>
   <div *ngFor="let company of filteredCompanies">
-
     <app-company class="company-title" [company]="company"></app-company>
   </div>
 </div>
 
 <div *ngIf="filteredCompanies.length === 0">
-  <p class="no-companies-message">No companies found</p>
+  <p>No companies found</p>
 </div>
 
 </body>

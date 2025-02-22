@@ -7,8 +7,7 @@ import { CompanyPageComponent } from './app/company-page/company-page.component'
 import { LeaveAReviewComponent } from './app/leave-areview/leave-areview.component';
 import { LayoutComponent } from './app/layout/layout.component';
 import { LoginpageComponent } from './app/loginpage/loginpage.component';
-
-
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 
 
 bootstrapApplication(AppComponent, {
@@ -25,6 +24,7 @@ bootstrapApplication(AppComponent, {
            { path: 'review', component: LeaveAReviewComponent },
         ]
       },
-    ])
+    ]),
+    provideHttpClient()
   ]
 }).catch((err) => console.error(err));
