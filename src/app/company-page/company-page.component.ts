@@ -14,8 +14,8 @@ import {AuthService} from "../auth.service";
   standalone: true
 })
 export class CompanyPageComponent implements OnInit {
-  companyData: any[] = [];
-  companyReviews: any[] = [];
+  companyData: any;
+  companyReviews: any;
   companyInfo: any;
 
   constructor(
@@ -40,9 +40,8 @@ export class CompanyPageComponent implements OnInit {
 
     this.http.get<any[]>(url).subscribe(data => {
       this.companyData = data;
-      this.companyInfo = this.companyData[0];
-      this.companyReviews = this.companyData[1];
-      console.log(this.companyReviews)
+      this.companyInfo = this.companyData.company;
+      this.companyReviews = this.companyData.reviews;
     });
   }
 }

@@ -1,22 +1,22 @@
 <body>
-<link rel="stylesheet" href="company-display.component.css">
-<div class="company">
-    <a [routerLink]="['/company', company.name]" class="nameStyle">{{ company.name }}</a>
-    <table>
+    <div class="company">
+      <a [routerLink]="['/company', company.name]" class="company-name">{{ company.name }}</a>
+      <table class="company-table">
         <thead>
-            <tr>
-                <th>Company Competitiveness</th>
-                <th>Company Rating</th>
-                <th>Apply Again</th>
-            </tr>
+          <tr>
+            <th>Company Competitiveness</th>
+            <th>Company Rating</th>
+            <th>Apply Again</th>
+          </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>{{ company.competitiveness }}</td>
-                <td>{{ company.rating }}</td>
-                <td>{{ company.applyAgain }}</td>
-            </tr>
+          <tr>
+            <td>{{ company.competitiveness }}</td>
+            <td>{{ company.rating }}</td>
+            <td>{{ company.applyAgain }}</td>
+          </tr>
         </tbody>
-    </table>
-</div>
-</body>
+      </table>
+    </div>
+  </body>
+  

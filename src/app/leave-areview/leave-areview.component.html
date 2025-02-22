@@ -11,16 +11,27 @@
       <br /><br />
 
       <label for="quality">Quality of Rejection</label>
-      <input type="number" id="quality" formControlName="quality" />
+      <div id="quality" class="radio-group">
+        <label *ngFor="let num of [1,2,3,4,5]">
+          <input type="radio" [value]="num" formControlName="quality" /> {{ num }}
+        </label>
+      </div>
       <br /><br />
 
-      <label for="confidence">Confidence of Last Interview:</label>
-      <input type="number" id="confidence" formControlName="confidence" />
+      <label for="confidence">Confidence of Last Interview</label>
+      <div id="confidence" class="radio-group">
+        <label *ngFor="let num of [1,2,3,4,5]">
+          <input type="radio" [value]="num" formControlName="confidence" /> {{ num }}
+        </label>
+      </div>
       <br /><br />
-
 
       <label for="compet">Competitiveness of Role:</label>
-      <input type="number" id="compet" formControlName="compet" />
+      <div id="compet" class="radio-group">
+        <label *ngFor="let num of [1,2,3,4,5]">
+          <input type="radio" [value]="num" formControlName="compet" /> {{ num }}
+        </label>
+      </div>
       <br /><br />
 
     <label for="rejected">How Were You Rejected:</label>
@@ -45,17 +56,26 @@
       <button type="submit" [disabled]="userForm.invalid">Submit</button>
     </form>
   </div>
-  <div *ngIf="submitted">
-    <h2>Form Submitted</h2>
-    <h3>Thank You For Submitting!</h3>
-    <p>Company Name: {{ userForm.value.companyName }}</p>
-    <p>Role: {{ userForm.value.role }}</p>
-    <p>Quality: {{ userForm.value.quality }}</p>
-    <p>Confidence: {{ userForm.value.confidence }}</p>
-    <p>Competitiveness: {{ userForm.value.compet }}</p>
-    <p>Rejected: {{ userForm.value.rejected }}</p>
-    <p>Apply Again?: {{ userForm.value.applyAgain }}</p>
-    <p>Rounds: {{ userForm.value.rounds }}</p>
-    <p>Other: {{ userForm.value.other }}</p>
-    <button (click)="newInput()">Submit Another Response?</button>
+  <div *ngIf="submitted" class="submitted-container">
+    <h2 class="thank-you-heading">Form Submitted</h2>
+    <h3 class="thank-you-message">Thank You For Submitting!</h3>
+  
+    <div class="submitted-details">
+      <p><strong>Company Name:</strong> {{ userForm.value.companyName }}</p>
+      <p><strong>Role:</strong> {{ userForm.value.role }}</p>
+      <p><strong>Quality of Rejection:</strong> {{ userForm.value.quality }}</p>
+      <p><strong>Confidence of Last Interview:</strong> {{ userForm.value.confidence }}</p>
+      <p><strong>Competitiveness of Role:</strong> {{ userForm.value.compet }}</p>
+      <p><strong>How Were You Rejected:</strong> {{ userForm.value.rejected }}</p>
+      <p><strong>Would You Apply Again?</strong> {{ userForm.value.applyAgain ? 'Yes' : 'No' }}</p>
+      <p><strong>Number of Rounds:</strong> {{ userForm.value.rounds }}</p>
+      <p><strong>Other Comments:</strong> {{ userForm.value.other || 'No additional comments' }}</p>
+    </div>
+  
+    <div class="submit-another-container">
+      <button (click)="newInput()" class="submit-another-btn">Submit Another Response</button>
+    </div>
+    <div class="submit-another-container">
+      <button (click)="goHome()" class="submit-another-btn">Home Page</button>
+    </div>
   </div>

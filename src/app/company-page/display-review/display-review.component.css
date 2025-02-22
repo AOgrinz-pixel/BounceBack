@@ -1,62 +1,108 @@
+/* Wrapper for the entire review section */
 .single-review {
-  margin-bottom: 20px;
-  padding: 20px;
-  border: 1px solid #d1d1d1;  /* Light grey border */
-  border-radius: 8px;  /* More rounded corners for modern look */
-  background-color: #f2dff5;  /* Soft background color */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
-  transition: box-shadow 0.3s ease-in-out;  /* Smooth transition on hover */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 900px;
+  margin: 20px auto;
+  font-family: 'Roboto', sans-serif;
+  transition: box-shadow 0.3s ease;
 }
-
 
 .single-review:hover {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);  /* Slightly larger shadow on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1), 0 6px 25px rgba(0, 0, 0, 0.15);
 }
 
-table {
-  width: 100%;  /* Table takes full width */
-  border-collapse: collapse;  /* Merge borders for a clean look */
-  margin: 20px 0;  /* Optional: space around the table */
-  background-color: #ffff;  /* White background for the table */
-  border-radius: 8px;  /* Rounded corners for the table */
-  overflow: hidden;  /* Prevent overflow */
+/* Header with Role */
+.review-header {
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
 }
 
-/* Style the table rows */
-tr:nth-child(even) {
-  background-color: #f9f9f9;  /* Zebra stripe effect for alternating rows */
+.review-title {
+  font-size: 24px;
+  color: #4285F4;
+  font-weight: 500;
+  margin: 0;
+  text-transform: capitalize;
 }
 
-/* Add padding and modernize the text alignment for table cells */
-td, th {
-  padding: 12px 15px;  /* Add generous padding */
-  text-align: left;  /* Align text to the left */
-  font-size: 16px;  /* Slightly larger font for readability */
+/* Table Styling */
+.review-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
-/* Style the table headers */
-th {
-  background-color: #3a5a9e;  /* Darker blue for header background */
-  color: white;  /* White text for contrast */
-  font-weight: bold;  /* Keep text bold for emphasis */
-  letter-spacing: 1px;  /* Slight spacing between header letters */
-  text-transform: uppercase;  /* Uppercase letters for modern feel */
+.review-table th, .review-table td {
+  padding: 14px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+  transition: background-color 0.3s ease;
 }
 
-/* Add subtle borders between cells for a more refined look */
-td, th {
-  border-bottom: 1px solid #ddd;  /* Light grey border */
+.review-table th {
+  background-color: #fafafa;
+  font-weight: bold;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* Optional: Add a border color on hover for a more interactive feel */
-tr:hover {
-  background-color: #f1f1f1;  /* Change background on hover for rows */
+.review-table td {
+  font-size: 16px;
+  color: #555;
+  background-color: #fff;
 }
 
-/* Optional: Style for the review header or title within each review card */
-.single-review h3 {
-  font-size: 18px;
-  font-weight: 600;
-  color: #3a5a9e;  /* Matching color with the table header */
+.review-table td:last-child {
+  color: #4285F4;
+}
+
+/* Hover effect for rows */
+.review-table tr:hover td {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Comments Section */
+.other-comments {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.comments-title {
+  font-size: 20px;
+  color: #333;
+  font-weight: 500;
   margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.other-comments p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Adding a Responsive Table */
+@media (max-width: 768px) {
+  .review-table {
+    font-size: 14px;
+  }
+
+  .review-table th, .review-table td {
+    padding: 10px;
+  }
+
+  .single-review {
+    padding: 20px;
+  }
 }

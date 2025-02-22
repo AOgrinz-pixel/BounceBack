@@ -1,27 +1,36 @@
 <div class="single-review">
-  <h2>Role: {{review.role}}</h2>
-<table>
-    <thead>
-      <tr>
-        <th>Quality of Rejection</th>
-        <th>Confidence of Last Interview</th>
-        <th>Competitiveness of Role</th>
-        <th>Rejection Type</th>
-        <th># of Rounds</th>
-      </tr>
-    </thead>
-    <tbody>
+  <div class="review-header">
+    <h2 class="review-title">Role: {{ review.role }}</h2>
+  </div>
+  
+  <div class="review-details">
+    <table class="review-table">
+      <thead>
         <tr>
-            <td>{{ review.quality }}</td>
-            <td>{{ review.confidence }}</td>
-            <td>{{ review.competitiveness }}</td>
-            <td>{{ review.selected }}</td>
-            <td>{{ review.numRounds }}</td>
+          <th>Quality of Rejection</th>
+          <th>Confidence of Last Interview</th>
+          <th>Competitiveness of Role</th>
+          <th>Rejection Type</th>
+          <th>Number of Rounds</th>
+          <th>Would Apply Again</th>
         </tr>
-    </tbody>
-  </table>
-  <div *ngIf="review.other">
-    <h3>Other Comments</h3>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ review.quality }}</td>
+          <td>{{ review.confidence }}</td>
+          <td>{{ review.competitiveness }}</td>
+          <td>{{ review.selected }}</td>
+          <td>{{ review.numRounds }}</td>
+          <td>{{ review.applyAgain ? 'Yes' : 'No' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="review.other != ''" class="other-comments">
+    <h3 class="comments-title">Other Comments</h3>
     <p>{{ review.other }}</p>
+  </div>
 </div>
-</div>
+
