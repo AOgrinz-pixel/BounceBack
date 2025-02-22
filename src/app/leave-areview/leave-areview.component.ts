@@ -16,20 +16,21 @@ export class LeaveAReviewComponent implements OnInit {
   // Variables to hold user input
   userForm: FormGroup;
   rejectOptions: string[] = ['Ghosted', 'Emailed', 'Phone Call', 'Other'];
-
+  applyAgainOpts: string[] = ['Yes', 'No'];
   submitted = false;
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     // Initialize the form controls inside the form group
     this.userForm = this.fb.group({
-      companyName: new FormControl(''),  
-      role: new FormControl(''), 
+      companyName: new FormControl(''),
+      role: new FormControl(''),
       quality: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(5)]),
       confidence: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(5)]),
       compet: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(5)]),
       rejected: new FormControl('', [Validators.required, Validators.required]),
       rounds: new FormControl(null, [Validators.required, Validators.min(0)]),
-      other: new FormControl('')
+      other: new FormControl('', [Validators.required, Validators.required]),
+      applyAgain: new FormControl
     });
   }
 
