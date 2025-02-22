@@ -1,19 +1,24 @@
+.line1 {
+  display: inline;
+}
 .nameStyle {
   font-size: 30px;
   color: #a2acbd;
   font-style: italic;
   font-family: Ebrima, serif;
+  text-align: left;
 }
 
 .competeStyle {
+
+}
+
+.ratingStyle {
   font-size: 20px;
   color: #a2acbd;
   font-family: Ebrima, serif;
   align-self: center;
-}
-
-.ratingStyle {
-
+  text-align: right;
 }
 
 .applyAgainStyle {
