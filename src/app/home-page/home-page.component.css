@@ -1,0 +1,42 @@
+body {
+  background-color: #4fa5fa;
+}
+
+.companyTitle {
+  font-family: "Cascadia Code", cursive;
+  font-size: 40px;
+  color: #b7456e;
+}
+.company-title {
+  display: inline-block;
+  width: 500px;
+  margin: 20px;
+  border: 3px solid #a2acbd;
+  height: 200px;
+  background-color: #f27aa1;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+.nameStyle {
+  font-size: 30px;
+
+}
+
+.competeStyle {
+
+}
+
+.ratingStyle {
+
+}
+
+.applyAgainStyle {
+
+}
