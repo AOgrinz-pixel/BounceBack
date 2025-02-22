@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl, FormBuilder, Validators, MinValidator } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -14,6 +14,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 export class LeaveAReviewComponent implements OnInit {
   // Variables to hold user input
+  @Input() companyName: string = ''; // Accept company name as an input
+
   userForm: FormGroup;
   rejectOptions: string[] = ['Ghosted', 'Emailed', 'Phone Call', 'Other'];
   applyAgainOpts: string[] = ['Yes', 'No'];
@@ -36,6 +38,7 @@ export class LeaveAReviewComponent implements OnInit {
 
   ngOnInit() {
     // You can add any logic you want to run on initialization here
+
   }
 
   // This function will save the user input when the form is submitted
