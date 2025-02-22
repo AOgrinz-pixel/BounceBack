@@ -31,10 +31,7 @@
     <br /><br />
 
       <label for="applyAgain">Would You Apply Here Again?</label>
-      <select formControlName="applyAgain">
-        <option value="" disabled>Select an option</option>
-        <option *ngFor="let option of applyAgainOpts">{{ option }}</option>
-      </select>
+      <input type = "checkbox", id="applyAgain", formControlName="applyAgain">
       <br /><br />
 
       <label for="rounds">Number of Rounds:</label>
@@ -57,6 +54,7 @@
     <p>Confidence: {{ userForm.value.confidence }}</p>
     <p>Competitiveness: {{ userForm.value.compet }}</p>
     <p>Rejected: {{ userForm.value.rejected }}</p>
+    <p>Apply Again?: {{ userForm.value.applyAgain }}</p>
     <p>Rounds: {{ userForm.value.rounds }}</p>
     <p>Other: {{ userForm.value.other }}</p>
     <button (click)="newInput()">Submit Another Response?</button>
