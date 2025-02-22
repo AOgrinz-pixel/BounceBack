@@ -1,0 +1,16 @@
+<div class="login-container">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <label for="username">Username:</label>
+      <input type="text" id="username" formControlName="username" />
+      <br /><br />
+  
+      <label for="password">Password:</label>
+      <input type="password" id="password" formControlName="password" />
+      <br /><br />
+  
+      <button type="submit" [disabled]="loginForm.invalid">Login</button>
+    </form>
+    <br>
+    <button (click)="skipLogin()">Skip Login</button>
+  </div>
