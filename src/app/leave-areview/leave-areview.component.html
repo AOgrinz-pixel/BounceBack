@@ -1,0 +1,56 @@
+<div class="form-container" *ngIf="!submitted">
+    <h2>User Input Form</h2>
+    <form [formGroup]="userForm" (ngSubmit)="saveInput()">
+      
+      <label for="companyName">Company Name:</label>
+      <input type="text" id="companyName" formControlName="companyName" />
+      <br /><br />
+  
+      <label for="role">Role:</label>
+      <input type="text" id="role" formControlName="role" />
+      <br /><br />
+
+      <label for="rejected">Confidence of Last Interview:</label>
+      <select formControlName="confidence">
+          <option value="" disabled>Select an option</option>
+          <option *ngFor="let option of numOptions">{{ option }}</option>
+        </select>
+      <br /><br />
+
+      <label for="rejected">Competitiveness of Role:</label>
+      <select formControlName="compet">
+          <option value="" disabled>Select an option</option>
+          <option *ngFor="let option of numOptions">{{ option }}</option>
+        </select>
+      <br /><br />
+
+    <label for="rejected">How Were You Rejected:</label>
+    <select formControlName="rejected">
+        <option value="" disabled>Select an option</option>
+        <option *ngFor="let option of rejectOptions">{{ option }}</option>
+      </select>
+    <br /><br />
+
+      <label for="rounds">Number of Rounds:</label>
+      <input type="number" id="rounds" formControlName="rounds" />
+      <br /><br />
+
+      <label for="other">Other Comments:</label>
+      <textarea id="other" formControlName="other"></textarea>
+      <br /><br />
+  
+      <button type="submit" [disabled]="userForm.invalid">Submit</button>
+    </form>
+  </div>
+  <div *ngIf="submitted">
+    <h2>Form Submitted</h2>
+    <h3>Thank You For Submitting!</h3>
+    <p>Company Name: {{ userForm.value.companyName }}</p>
+    <p>Role: {{ userForm.value.role }}</p>
+    <p>Confidence: {{ userForm.value.confidence }}</p>
+    <p>Competitiveness: {{ userForm.value.compet }}</p>
+    <p>Rejected: {{ userForm.value.rejected }}</p>
+    <p>Rounds: {{ userForm.value.rounds }}</p>
+    <p>Other: {{ userForm.value.other }}</p>
+    <button (click)="newInput()">Submit Another Response?</button>
+  </div>

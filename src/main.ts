@@ -5,13 +5,14 @@ import { provideRouter } from '@angular/router';
 import { DataFetcherComponent } from './app/data-fetcher/data-fetcher.component';
 import { HomePageComponent } from './app/home-page/home-page.component';
 import { CompanyPageComponent } from './app/company-page/company-page.component';
-
+import { LeaveAReviewComponent } from './app/leave-areview/leave-areview.component';
 // Configure the router
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter([
       { path: 'home', component: HomePageComponent },
       { path: 'company/:name', component: CompanyPageComponent },
+      { path: 'review', component: LeaveAReviewComponent },
       { path: 'test', component: DataFetcherComponent },
     ])
   ]
