@@ -5,6 +5,7 @@ body {
   color: #000; /* Black text */
   margin: 0;
   padding: 0;
+  z-index: 0;
 }
 
 /* Container for the search input field */
@@ -53,6 +54,7 @@ body {
   width: 100%;
   transition: box-shadow 0.3s ease;
   border: 1px solid #e0e0e0; /* Light gray border */
+  z-index: 2;
 }
 
 .company-item:hover {
@@ -81,3 +83,18 @@ body {
     padding: 15px;
   }
 }
+
+.bottom-image {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-image: url('/assets/images/hopepage-footer.png');
+  background-position: center;
+  background-size: 1800px 950px; /* Custom size for the image */
+  background-repeat: no-repeat;
+  z-index: 1;
+  height: calc(100% * 0.5333); /* Adjust height based on aspect ratio */
+}
+
+
