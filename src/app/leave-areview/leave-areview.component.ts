@@ -47,11 +47,7 @@ export class LeaveAReviewComponent implements OnInit {
     const formData = this.userForm.value
 
     // Convert the applyAgain value to 'TRUE' or 'FALSE' before sending
-    if (this.userForm.value.applyAgain) {
-      formData.applyAgain = 'TRUE';  // Set to 'TRUE' if checkbox is checked
-    } else {
-      formData.applyAgain = 'FALSE'; // Set to 'FALSE' if checkbox is unchecked
-    }
+    formData.applyAgain = !!this.userForm.value.applyAgain;
 
     this.http.post('http://localhost:8080/company/review', formData).subscribe(
       (response) => {
