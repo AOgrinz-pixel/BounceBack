@@ -56,7 +56,9 @@ body {
 
 /* Each company card container */
 .company-item {
-  background-color: #f0f0f0; /* White background */
+  /*background-color: #f0f0f0; /* White background */
+  background-color: rgba(240, 240, 240, 0.9); /* Light gray background with 90% opacity */
+
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
