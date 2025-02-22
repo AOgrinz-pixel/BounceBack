@@ -20,7 +20,7 @@ body {
   max-width: 500px;
   padding: 12px;
   font-size: 16px;
-  border: 1px solid #ccc; /* Light gray border */
+  border: 2px solid #ccc; /* Light gray border */
   border-radius: 50px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
   outline: none;
@@ -46,7 +46,7 @@ body {
 
 /* Each company card container */
 .company-item {
-  background-color: #fff; /* White background */
+  background-color: #f0f0f0; /* White background */
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
