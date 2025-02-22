@@ -1,8 +1,9 @@
-
+<body>
+<link rel="stylesheet" href="company-display.component.css">
 <div class="company">
-    <a [routerLink]="['/company', company.name]">{{ company.name }}</a>
-    <p class = "nameStyle">{{ company.name }}</p>
+    <a [routerLink]="['/company', company.name]" class="nameStyle">{{ company.name }}</a>
     <p class = "competeStyle">{{ company.competitiveness }}</p>
     <p class = "ratingStyle">{{ company.rating }}</p>
     <p class = "applyAgainStyle">{{ company.applyAgain }}</p>
 </div>
+</body>

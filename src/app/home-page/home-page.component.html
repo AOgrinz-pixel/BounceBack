@@ -5,9 +5,9 @@
 <body>
 
 <div *ngIf="companies.length > 0">
-  <h2 class="companyTitle">Companies</h2>
+  <h2>Companies</h2>
   <div *ngFor="let company of companies">
-    <app-company class="company-title"></app-company>
+    <app-company class="company-title" [company]="company"></app-company>
   </div>
 </div>
 
