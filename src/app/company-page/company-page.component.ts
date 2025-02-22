@@ -65,8 +65,9 @@ export class CompanyPageComponent implements OnInit {
       this.filteredReviews = this.companyReviews;
     } else {
       // Filter reviews based on the role
-      this.filteredReviews = this.companyReviews.filter(review =>
+      this.filteredReviews = this.companyReviews.filter((review) =>
         review.role.toLowerCase().includes(this.searchTerm.toLowerCase()) // Case-insensitive search
+
       );
     }
   }
