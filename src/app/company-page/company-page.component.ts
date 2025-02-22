@@ -57,6 +57,12 @@ export class CompanyPageComponent implements OnInit {
     });
   }
 
+  showReviewSlide = false;
+
+  toggleReviewSlide() {
+    this.showReviewSlide = !this.showReviewSlide;
+  }
+
 
   // Filter reviews based on the search term
   filterReviews() {

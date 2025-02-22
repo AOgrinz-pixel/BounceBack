@@ -1,0 +1,89 @@
+/* Global Styles for this section */
+.not-logged-in {
+    background-color: #fff;  /* White background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+    max-width: 600px;
+    margin: 20px auto;  /* Centered horizontally */
+    text-align: center;
+  }
+  
+  /* Text Style */
+  .not-logged-in p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;  /* Dark gray text for a professional feel */
+    margin: 0;
+  }
+
+/* Button to trigger the slide effect */
+.open-review-btn {
+    padding: 15px 25px;
+    font-size: 16px;
+    background-color: #4267bc;  /* Blue button */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;  /* Allow it to be centered as inline block */
+    text-align: center;
+    margin: 0 auto;  /* Center the button horizontally */
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;  /* Center the button horizontally */
+    align-items: center;  /* Center the button vertically if needed */
+  }
+  
+  .open-review-btn:hover {
+    background-color: #073cb9;  /* Darker shade on hover */
+  }
+  
+  /* Style for the sliding page */
+  .review-slide {
+    position: fixed;
+    bottom: -100%;  
+    left: 0;
+    width: 100%;
+    height: 80%; 
+    background-color: #fff;  
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
+    transition: bottom 0.4s ease-in-out; 
+    padding: 20px;
+    overflow-y: auto; /* Allow scrolling */
+    padding-bottom: 50px;
+  }
+  
+  /* When the page is open, slide up from the bottom */
+  .review-slide.open {
+    bottom: 0;  /* Slide up to the top */
+  }
+  
+  /* Close button inside the sliding page */
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #000;
+    cursor: pointer;
+    margin-right: 40px;
+  }
+  
+  .close-btn:hover {
+    color: #333;  /* Darker color on hover */
+  }
+  
+  /* Allow the content inside review-slide to scroll */
+  .review-slide app-leave-areview {
+    max-height: calc(100% - 40px); /* Allow some space for the close button */
+    overflow-y: auto; /* Enable scrolling inside the form */
+  }
+  
