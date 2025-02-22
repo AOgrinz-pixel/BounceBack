@@ -17,7 +17,7 @@ export class AppModule {}
   selector: 'app-company-page',
   templateUrl: './company-page.component.html',
   styleUrls: ['./company-page.component.css'],
-  imports: [HttpClientModule, DisplayReviewComponent, CommonModule, LeaveAReviewComponent, ReactiveFormsModule],
+  imports: [HttpClientModule, DisplayReviewComponent, CommonModule, LeaveAReviewComponent, ReactiveFormsModule, FormsModule],
   standalone: true
 })
 export class CompanyPageComponent implements OnInit {
@@ -52,6 +52,7 @@ export class CompanyPageComponent implements OnInit {
       this.companyData = data;
       this.companyInfo = this.companyData[0];
       this.companyReviews = this.companyData[1];
+      this.filteredReviews = this.companyReviews;
       console.log(this.companyReviews)
     });
   }

@@ -7,7 +7,7 @@
     </div>
   </div>
 
-
+<input type="text" [(ngModel)]="searchTerm" (input)="filterReviews()" placeholder="Search by role" />
 
 <app-leave-areview *ngIf="authService.isAuthenticated()", [companyName]= "companyInfo?.name"></app-leave-areview>
 
