@@ -10,18 +10,17 @@
       <input type="text" id="role" formControlName="role" />
       <br /><br />
 
-      <label for="rejected">Confidence of Last Interview:</label>
-      <select formControlName="confidence">
-          <option value="" disabled>Select an option</option>
-          <option *ngFor="let option of numOptions">{{ option }}</option>
-        </select>
+      <label for="quality">Quality of Rejection</label>
+      <input type="number" id="quality" formControlName="quality" />
       <br /><br />
 
-      <label for="rejected">Competitiveness of Role:</label>
-      <select formControlName="compet">
-          <option value="" disabled>Select an option</option>
-          <option *ngFor="let option of numOptions">{{ option }}</option>
-        </select>
+      <label for="confidence">Confidence of Last Interview:</label>
+      <input type="number" id="confidence" formControlName="confidence" />
+      <br /><br />
+
+
+      <label for="compet">Competitiveness of Role:</label>
+      <input type="number" id="compet" formControlName="compet" />
       <br /><br />
 
     <label for="rejected">How Were You Rejected:</label>
@@ -47,6 +46,7 @@
     <h3>Thank You For Submitting!</h3>
     <p>Company Name: {{ userForm.value.companyName }}</p>
     <p>Role: {{ userForm.value.role }}</p>
+    <p>Quality: {{ userForm.value.quality }}</p>
     <p>Confidence: {{ userForm.value.confidence }}</p>
     <p>Competitiveness: {{ userForm.value.compet }}</p>
     <p>Rejected: {{ userForm.value.rejected }}</p>

@@ -16,19 +16,19 @@ export class LeaveAReviewComponent implements OnInit {
   // Variables to hold user input
   userForm: FormGroup;
   rejectOptions: string[] = ['Ghosted', 'Emailed', 'Phone Call', 'Other'];
-  numOptions: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   submitted = false;
 
-  constructor(private fb:FormBuilder) {
+  constructor(private fb: FormBuilder, private http: HttpClient) {
     // Initialize the form controls inside the form group
     this.userForm = this.fb.group({
       companyName: new FormControl(''),  
       role: new FormControl(''), 
-      confidence: new FormControl(null),
-      compet: new FormControl(null),
-      rejected: new FormControl(''),
-      rounds: new FormControl(null, Validators.min(0)),
+      quality: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(5)]),
+      confidence: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(5)]),
+      compet: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(5)]),
+      rejected: new FormControl('', [Validators.required, Validators.required]),
+      rounds: new FormControl(null, [Validators.required, Validators.min(0)]),
       other: new FormControl('')
     });
   }
@@ -42,6 +42,14 @@ export class LeaveAReviewComponent implements OnInit {
     // You can now save the data, or send it to an API, etc.
     const formData = this.userForm.value
     console.log(this.userForm.value);
+    this.http.post('https://localhost:8080/review', formData).subscribe(
+      (response) => {
+        console.log('API Response:', response); // Handle success response
+      },
+      (error) => {
+        console.error('API Error:', error); // Handle error response
+      }
+    );
     this.submitted = true;
   }
 
