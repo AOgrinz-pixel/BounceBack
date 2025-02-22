@@ -21,10 +21,10 @@ export class AppModule {}
   standalone: true
 })
 export class CompanyPageComponent implements OnInit {
-  companyData: any;
-  companyReviews: any;
+  companyData: any[] = [];
+  companyReviews: any[] = [];
   companyInfo: any;
-  filteredReviews : any[] = [];
+  filteredReviews: any[] = [];
   searchTerm: string = '';
 
   constructor(
@@ -44,7 +44,7 @@ export class CompanyPageComponent implements OnInit {
   }
 
 
-  fetchCompanyData(name: any): void {
+  fetchCompanyData(name: string | null): void {
     // Replace with your actual API endpoint
     const url = `http://localhost:8080/company/${name}`;
 
@@ -57,6 +57,19 @@ export class CompanyPageComponent implements OnInit {
     });
   }
 
+  // Filter reviews based on the role attribute
+  filterReviews() {
+    if (this.searchTerm.trim() === '') {
+      // If search term is empty, show all reviews
+      this.filteredReviews = this.companyReviews;
+    } else {
+      // Otherwise, filter reviews based on the role
+      this.filteredReviews = this.companyReviews.filter(review =>
+        review.role.toLowerCase().includes(this.searchTerm.toLowerCase())
+      );
+    }
+  }
+
   showReviewSlide = false;
 
   toggleReviewSlide() {
@@ -64,22 +77,7 @@ export class CompanyPageComponent implements OnInit {
   }
 
 
-  // Filter reviews based on the search term
-  filterReviews() {
-    if (this.searchTerm.trim() === '') {
-      // If the search term is empty, show all reviews
-      this.filteredReviews = this.companyReviews;
-    } else {
-      // Filter reviews based on the role
-      this.filteredReviews = this.companyReviews.filter((review) =>
-        review.role.toLowerCase().includes(this.searchTerm.toLowerCase()) // Case-insensitive search
-
-      );
-    }
-  }
-
   // Watch for changes in searchTerm and filter reviews
   ngOnChanges() {
-    this.filterReviews();
   }
 }

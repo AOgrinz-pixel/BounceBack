@@ -1,13 +1,12 @@
 <div>
 
     <h2 class="companyTitle">Companies</h2>
+    <input type="text" [(ngModel)]="searchTerm" (input)="filterReviews()" placeholder="Search by role" />
 
     <div *ngFor="let review of filteredReviews">
       <app-display-review [review]="review"></app-display-review>
     </div>
   </div>
-
-<input type="text" [(ngModel)]="searchTerm" (input)="filterReviews()" placeholder="Search by role" />
 
 
 <!-- Button to trigger the slide-up page -->
