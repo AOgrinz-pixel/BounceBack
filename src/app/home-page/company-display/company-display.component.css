@@ -1,65 +1,83 @@
+/* Company container */
 .company {
-  margin: 30px 0;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 4px 20px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  background-color: #fff;  /* White background for the company block */
-  border-radius: 8px;  /* Rounded corners for a modern feel */
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
-  transition: box-shadow 0.3s ease-in-out;  /* Smooth transition on hover */
+  max-width: 900px;
+  margin: 30px auto;
+  font-family: 'Roboto', sans-serif;
+  transition: box-shadow 0.3s ease;
 }
 
 .company:hover {
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);  /* Larger shadow on hover for interactivity */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1), 0 6px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Style for the company name link */
-.nameStyle {
-  font-size: 22px;  /* Slightly larger font size */
-  font-weight: 600;  /* Bold weight for the name */
-  color: #3a5a9e;  /* Blue color for the company name */
-  text-decoration: none;  /* Remove underline from the link */
-  transition: color 0.3s ease;  /* Smooth color transition */
-  display: inline-block;  /* Ensure it's treated as an inline block */
-  margin-bottom: 15px;  /* Space between the name and the table */
+/* Company name style */
+.company-name {
+  font-size: 28px;
+  font-weight: 500;
+  color: #4285F4;
+  text-decoration: none;
+  margin-bottom: 20px;
+  display: block;
+  transition: color 0.3s ease;
 }
 
-.nameStyle:hover {
-  color: #1e3d59;  /* Darker blue when hovered */
+.company-name:hover {
+  color: #0A63B4; /* Darker shade of blue */
 }
 
-/* Table styling */
-table {
-  width: 100%;  /* Full width for the table */
-  border-collapse: collapse;  /* Clean, collapsed borders */
-  background-color: #f9f9f9;  /* Light background color for the table */
-  border-radius: 8px;  /* Rounded corners */
-  overflow: hidden;  /* Prevent overflow */
+/* Table Styling */
+.company-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
-/* Style the table headers */
-th {
-  background-color: #3a5a9e;  /* Dark blue for the header */
-  color: white;  /* White text for contrast */
-  padding: 12px 15px;
+.company-table th, .company-table td {
+  padding: 14px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+  transition: background-color 0.3s ease;
+}
+
+.company-table th {
+  background-color: #fafafa;
   font-weight: bold;
-  text-align: left;
-  text-transform: uppercase;  /* Uppercase letters for headers */
-  letter-spacing: 1px;  /* Slight spacing between letters */
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* Style the table cells */
-td {
-  padding: 12px 15px;  /* Padding for cells */
-  text-align: left;  /* Left-aligned text */
-  font-size: 16px;  /* Slightly larger font for better readability */
-  border-bottom: 1px solid #ddd;  /* Light grey border between rows */
+.company-table td {
+  font-size: 16px;
+  color: #555;
+  background-color: #fff;
 }
 
-
-/* Zebra striping for alternating rows */
-tr:nth-child(even) {
-  background-color: #f9f9f9;  /* Slightly lighter background for even rows */
+.company-table td:last-child {
+  color: #4285F4;
 }
 
-tr:nth-child(odd) {
-  background-color: #ffffff;  /* White background for odd rows */
+/* Hover effect for rows */
+.company-table tr:hover td {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Adding a responsive table */
+@media (max-width: 768px) {
+  .company-table {
+    font-size: 14px;
+  }
+
+  .company-table th, .company-table td {
+    padding: 10px;
+  }
+
+  .company {
+    padding: 15px;
+  }
 }

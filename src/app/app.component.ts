@@ -5,6 +5,7 @@ import { CompanyPageComponent } from './company-page/company-page.component';
 import { LeaveAReviewComponent } from './leave-areview/leave-areview.component';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { UserPageComponent } from './user-page/user-page.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginpageComponent },
@@ -12,6 +13,7 @@ const appRoutes: Routes = [
   { path: 'company/:name', component: CompanyPageComponent },
   { path: 'review', component: LeaveAReviewComponent },
   { path: 'createuser', component: CreateUserComponent },
+  { path: 'user/:name', component: UserPageComponent },
   {path: '', redirectTo: 'login', pathMatch: 'full'}
 ];
 

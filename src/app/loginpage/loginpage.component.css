@@ -3,7 +3,7 @@
     max-width: 400px;  /* Limit the width of the form */
     margin: 0 auto;  /* Center the form horizontally */
     padding: 30px;
-    background-color: #fff;  /* White background for the form */
+    background-color:  rgba(255, 255, 255, 0.8);  /* White background for the form */
     border-radius: 8px;  /* Rounded corners for the form */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* Soft shadow for depth */
     font-family: 'Arial', sans-serif;  /* Clean, modern font */
@@ -16,7 +16,7 @@
     text-align: center;  /* Center the heading */
     margin-bottom: 20px;  /* Space below the heading */
   }
-  
+
   /* Label styling */
   label {
     font-size: 16px;
@@ -45,7 +45,7 @@
   
   /* Button styling */
   button {
-    background-color: #3a5a9e;  /* Blue background */
+    background-color: rgba(58, 90, 158, 0.8);  /* Blue background */
     color: white;  /* White text */
     padding: 12px;
     width: 100%;  /* Full width of the container */
@@ -88,3 +88,6 @@
     flex-direction: column;  /* Stack the inputs vertically */
   }
   
+  body {
+    background-image: url('/assets/images/behindloin.jpg');
+  }

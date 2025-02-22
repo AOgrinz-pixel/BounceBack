@@ -1,0 +1,139 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container for Welcome User */
+  .welcome-user {
+    padding: 40px 0;
+    text-align: left; /* Aligning the welcome message to the left */
+    margin-left: 20px; /* Ensure it's not directly on the edge */
+  }
+  
+  .welcome-user h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #000;
+    margin: 0;
+  }
+  
+  /* Container for User Stats */
+  .user-stats-container {
+    margin: 20px 20px;
+    align-self: flex-start; /* Align to left */
+    max-width: 1200px;
+    border-radius: 8px;
+    background-color: #fff; /* White background */
+  }
+  
+  /* Title of the Stats Section */
+  .section-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #000;
+    text-align: left;
+  }
+  
+  /* Card for Each Stat Item */
+  .stat-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+    text-align: left; /* Align stat items to the left */
+  }
+  
+  .stat-item {
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #fff; /* White background for stat items */
+    border: 1px solid #ccc; /* Light gray border */
+  }
+  
+  .stat-item .stat-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555; /* Light gray for the label */
+  }
+  
+  .stat-item .stat-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000; /* Black text for values */
+  }
+  
+  /* Reviews Section */
+  .reviews-container {
+    padding: 30px;
+    margin-top: 10px;
+    border-radius: 8px;
+
+}
+  
+  /* Review Header (More Info Button) */
+  .review-header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fff; /* White background */
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    transition: background-color 0.3s ease;
+    border: 1px solid #ccc; /* Light border */
+    text-align: left; /* Align text to the left */
+  }
+  
+  .review-header:hover {
+    background-color: #f7f7f7; /* Slight hover effect */
+  }
+  
+  .arrow-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border: solid 2px #000;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+  }
+  
+  .arrow-icon.open {
+    transform: rotate(-135deg); /* Flip the arrow when reviews are visible */
+  }
+  
+  /* Reviews Dropdown Content */
+  .reviews-dropdown {
+    margin-top: 20px;
+    padding: 10px 0;
+    background-color: #fff; /* White background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Ensure review text is aligned left */
+  }
+  
+  .single-review {
+    padding: 20px;
+    margin-bottom: 10px;
+    background-color: #fff; /* White background */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for reviews */
+    border: 1px solid #ccc; /* Light border for reviews */
+    text-align: left; /* Ensure review text is aligned left */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .stat-card {
+      grid-template-columns: 1fr; /* Stack stats on smaller screens */
+    }
+  }
+  

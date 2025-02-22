@@ -1,74 +1,78 @@
+/* Global Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #e0f7fa;  /* Light teal blue background */
+  margin: 0;
+  padding: 0;
+}
+
+/* Container for the search input field */
 .search-term {
-  /* Style for the search bar container */
-  margin: 20px auto;
-  max-width: 600px;
-  width: 100%;
-  padding: 10px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .search-input {
-  width: 100%;
-  padding: 10px 15px;
+  width: 80%;
+  max-width: 500px;
+  padding: 15px;
   font-size: 16px;
-  border-radius: 25px;
-  border: 2px solid #007bff;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   outline: none;
-  transition: all 0.3s ease;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .search-input:focus {
-  border-color: #0056b3;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-/* Style for the header text */
-.companies-header {
-  font-size: 24px;
-  color: #333;
-  text-align: center;
-  margin-top: 40px;
+  border-color: #4285F4;
+  box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
 }
 
-/* Style for the no companies message */
+/* Container for the company items */
+.companies-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns per row */
+  gap: 75px; /* Increased gap between items */
+  margin: 0 20px;
+  justify-items: center;
+}
+
+/* Each company card container */
+.company-item {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 4px 20px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  transition: box-shadow 0.3s ease;
+}
+
+.company-item:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), 0 6px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the "No Companies Found" message */
 .no-companies-message {
   text-align: center;
   font-size: 18px;
-  color: #888;
-  margin-top: 20px;
-}
-body {
-  background-color: #4fa5fa;
-  padding-bottom: 10px;
+  color: #666;
+  padding: 40px 20px;
 }
 
-.companyTitle {
-  font-family: "Cascadia Code", cursive;
-  font-size: 40px;
-  color: #f0cfdb;
-}
-.company-title {
-  display: inline-block;
-  width: 500px;
-  margin: 20px;
-  height: 200px;
-  background-color: #f5b7cb;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  display: flex;
-  align-items: center;
-  padding-top: 20px;
+/* Mobile responsive behavior */
+@media (max-width: 768px) {
+  .search-input {
+    width: 90%;
+  }
 
-}
-a {
-  color: white;
-  text-decoration: none;
-}
-a:visited {
-  color: white;
-}
+  .companies-list {
+    grid-template-columns: 1fr; /* Stack items on small screens */
+  }
 
-.big-container {
-  padding-top: 20px;
+  .company-item {
+    padding: 15px;
+  }
 }

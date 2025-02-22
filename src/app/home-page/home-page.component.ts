@@ -56,6 +56,7 @@ export class HomePageComponent implements OnInit {
     this.http.get<any[]>('http://localhost:8080/home') // Ensure the API returns an array
       .subscribe((data) => {
         this.companies = data; // Assign the response to an array
+        console.log(data)
         this.filteredCompanies = this.companies
       });
   }

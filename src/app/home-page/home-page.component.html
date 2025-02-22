@@ -14,15 +14,16 @@
   />
 </div>
 
-
-<div *ngIf="filteredCompanies.length > 0">
-  <div *ngFor="let company of filteredCompanies">
-    <app-company class="company-title" [company]="company"></app-company>
+  <!-- Companies Display Section -->
+  <div *ngIf="filteredCompanies.length > 0" class="companies-list">
+    <div *ngFor="let company of filteredCompanies" class="company-item">
+      <app-company [company]="company"></app-company>
+    </div>
   </div>
-</div>
 
-<div *ngIf="filteredCompanies.length === 0">
-  <p class="no-companies-message">No companies found</p>
-</div>
-
+  <!-- No Results Message -->
+  <div *ngIf="filteredCompanies.length === 0">
+    <p class="no-companies-message">No companies found</p>
+  </div>
 </body>
+

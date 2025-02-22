@@ -21,8 +21,8 @@ export class AppModule {}
   standalone: true
 })
 export class CompanyPageComponent implements OnInit {
-  companyData: any[] = [];
-  companyReviews: any[] = [];
+  companyData: any;
+  companyReviews: any;
   companyInfo: any;
   filteredReviews : any[] = [];
   searchTerm: string = '';
