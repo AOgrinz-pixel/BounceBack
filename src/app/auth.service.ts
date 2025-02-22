@@ -12,6 +12,7 @@ export class AuthService {
   private isLoggedIn = false;
   private success: any;
   private user: any;
+  private username: string = '';
   
   login(credentials: { username: string, password: string }): Observable<boolean> {
     console.log(credentials);
@@ -26,6 +27,7 @@ export class AuthService {
     );
     if (this.success == true) {
       this.isLoggedIn = true;
+      this.username = credentials.username
       return of(true)
     }
     return of(false);
@@ -35,6 +37,7 @@ export class AuthService {
     return this.http.post('http://localhost:8080/login/create', credentials).pipe(
       map((response: any) => {
         console.log('User Created:', response); // Handle success response
+        this.username = credentials.username;
         return true;
       }),
       catchError((error) => {
@@ -51,6 +54,10 @@ export class AuthService {
 
   isAuthenticated(): boolean {
     return this.isLoggedIn;
+  }
+
+  getUsername(): string {
+    return this.username;
   }
 
 }

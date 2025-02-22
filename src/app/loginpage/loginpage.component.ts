@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-loginpage',
@@ -11,7 +11,7 @@ import { Component, Inject } from '@angular/core';
   templateUrl: './loginpage.component.html',
   styleUrl: './loginpage.component.css'
 })
-export class LoginpageComponent {
+export class LoginpageComponent implements OnInit {
   loginForm: FormGroup;
 
   constructor(private fb: FormBuilder, @Inject(AuthService) private authService: AuthService, private router: Router) {
@@ -19,6 +19,11 @@ export class LoginpageComponent {
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
+  }
+  ngOnInit(): void {
+    // Initialize any necessary data or state here
+    this.authService.logout();
+    console.log(this.authService.isAuthenticated());
   }
 
   onSubmit(): void {
