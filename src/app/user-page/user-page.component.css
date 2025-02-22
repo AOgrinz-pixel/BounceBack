@@ -136,4 +136,23 @@ body {
       grid-template-columns: 1fr; /* Stack stats on smaller screens */
     }
   }
+
+  .user-stats-container {
+    position: relative;
+    padding-right: -500px; /* Space for the image */
+}
+
+.image-overlay-container {
+    position: absolute;
+    right: -1200px; /* Adjust this to control overlap */
+    transform: translateY(-50%);
+    top: 300px;
+}
+
+.user-image {
+    width: 40%; /* Set image size */
+    height: auto;
+    border-radius: 8px; /* Optional: for rounded corners */
+}
+
   
