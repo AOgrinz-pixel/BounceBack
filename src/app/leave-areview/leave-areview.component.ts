@@ -32,7 +32,7 @@ export class LeaveAReviewComponent implements OnInit {
       rejected: new FormControl('', [Validators.required, Validators.required]),
       rounds: new FormControl(null, [Validators.required, Validators.min(0)]),
       other: new FormControl('', [Validators.required, Validators.required]),
-      applyAgain: new FormControl
+      applyAgain: new FormControl('', [Validators.required]),
     });
   }
 
@@ -48,9 +48,9 @@ export class LeaveAReviewComponent implements OnInit {
 
     // Convert the applyAgain value to 'TRUE' or 'FALSE' before sending
     if (this.userForm.value.applyAgain) {
-      formData.applyAgain = 'TRUE';  // Set to 'TRUE' if checkbox is checked
+      formData.applyAgain = true;  // Set to 'TRUE' if checkbox is checked
     } else {
-      formData.applyAgain = 'FALSE'; // Set to 'FALSE' if checkbox is unchecked
+      formData.applyAgain = false; // Set to 'FALSE' if checkbox is unchecked
     }
 
     this.http.post('http://localhost:8080/company/review', formData).subscribe(
