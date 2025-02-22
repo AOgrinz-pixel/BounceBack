@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClientModule, HttpClient } from '@angular/common/http';  // Assuming you need to make an HTTP request
 import { CommonModule } from '@angular/common';
 import { DisplayReviewComponent } from "./display-review/display-review.component";
-import { LeaveAReviewComponent } from "C:\\Users\\caitl\\IdeaProjects\\RateMyRejection\\src\\app\\leave-areview\\leave-areview.component"; // Import the LeaveAReviewComponent
+import { LeaveAReviewComponent } from '../leave-areview/leave-areview.component';
 
 @Component({
   selector: 'app-company-page',
@@ -25,7 +25,6 @@ export class CompanyPageComponent implements OnInit {
   ngOnInit(): void {
     // Get the 'id' parameter from the route
 
-    console.log("HEERRERERERERERERE");
     this.route.paramMap.subscribe(params => {
       const companyName = params.get('name');
       this.fetchCompanyData(companyName);

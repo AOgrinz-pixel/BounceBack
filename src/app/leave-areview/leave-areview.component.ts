@@ -42,7 +42,6 @@ export class LeaveAReviewComponent implements OnInit {
   saveInput() {
     // You can now save the data, or send it to an API, etc.
     const formData = this.userForm.value
-    console.log(this.userForm.value);
     this.http.post('https://localhost:8080/review', formData).subscribe(
       (response) => {
         console.log('API Response:', response); // Handle success response
