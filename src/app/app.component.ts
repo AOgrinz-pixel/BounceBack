@@ -1,13 +1,23 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { DataFetcherComponent } from './data-fetcher/data-fetcher.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { CompanyComponent } from './home-page/company-display/company-display.component';
+
+const appRoutes: Routes = [
+  { path: 'home', component: HomePageComponent },
+  { path: 'test', component: DataFetcherComponent }, 
+  { path: 'company/:id', component: CompanyComponent }
+];
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'RateMyRejection';
 }
