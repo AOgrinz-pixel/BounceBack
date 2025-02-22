@@ -7,8 +7,8 @@ import { DisplayReviewComponent } from "./display-review/display-review.componen
   selector: 'app-company-page',
   templateUrl: './company-page.component.html',
   styleUrls: ['./company-page.component.css'],
-  imports: [HttpClientModule, DisplayReviewComponent, CommonModule], 
-  standalone: true  
+  imports: [HttpClientModule, DisplayReviewComponent, CommonModule],
+  standalone: true
 })
 export class CompanyPageComponent implements OnInit {
   companyData: any[] = [];

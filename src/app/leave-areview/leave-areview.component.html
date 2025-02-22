@@ -1,11 +1,11 @@
 <div class="form-container" *ngIf="!submitted">
     <h2>User Input Form</h2>
     <form [formGroup]="userForm" (ngSubmit)="saveInput()">
-      
+
       <label for="companyName">Company Name:</label>
       <input type="text" id="companyName" formControlName="companyName" />
       <br /><br />
-  
+
       <label for="role">Role:</label>
       <input type="text" id="role" formControlName="role" />
       <br /><br />
@@ -30,6 +30,13 @@
       </select>
     <br /><br />
 
+      <label for="applyAgain">Would You Apply Here Again?</label>
+      <select formControlName="applyAgain">
+        <option value="" disabled>Select an option</option>
+        <option *ngFor="let option of applyAgainOpts">{{ option }}</option>
+      </select>
+      <br /><br />
+
       <label for="rounds">Number of Rounds:</label>
       <input type="number" id="rounds" formControlName="rounds" />
       <br /><br />
@@ -37,7 +44,7 @@
       <label for="other">Other Comments:</label>
       <textarea id="other" formControlName="other"></textarea>
       <br /><br />
-  
+
       <button type="submit" [disabled]="userForm.invalid">Submit</button>
     </form>
   </div>
