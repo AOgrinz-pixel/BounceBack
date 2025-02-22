@@ -42,6 +42,7 @@ export class CompanyPageComponent implements OnInit {
       this.companyData = data;
       this.companyInfo = this.companyData.company;
       this.companyReviews = this.companyData.reviews;
+      console.log(this.companyReviews);
     });
   }
 }

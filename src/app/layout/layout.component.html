@@ -1,6 +1,7 @@
 <nav>
     <a routerLink="/home" routerLinkActive="active">Home</a>
     <a *ngIf="authService.isAuthenticated()" routerLink="/review" routerLinkActive="active">Leave A Review</a>
+    <a *ngIf="authService.isAuthenticated()" [routerLink]="['/user', getUsername()]">Profile</a>
     <a *ngIf="authService.isAuthenticated()" (click)="logout()" routerLink="/home">Logout</a>
     <a *ngIf="!authService.isAuthenticated()" routerLink="/login" routerLinkActive="active">Login</a>
 </nav>

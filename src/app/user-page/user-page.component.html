@@ -1,0 +1,53 @@
+<div class="welcome-user">
+    <h1>Hi, {{ username }}</h1>
+  </div>
+  <div class="user-stats-container">
+    <h2 class="section-title">User Stats Overview</h2>
+    <hr>
+    <div class="stat-card">
+      <div class="stat-item">
+        <span class="stat-label">Average Competitiveness:</span>
+        <span class="stat-value"> {{ userData.competitveness }}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Average Number of Rounds:</span>
+        <span class="stat-value"> {{ userData.numRounds }}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Average Confidence of Last Interview:</span>
+        <span class="stat-value"> {{ userData.confidence }}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Most Common Rejected Type:</span>
+        <span class="stat-value"> {{ userData.rejectType }}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Total Apply Again (No):</span>
+        <span class="stat-value"> {{ userData.applyNo }}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Total Apply Again (Yes):</span>
+        <span class="stat-value"> {{ userData.applyYes }}</span>
+      </div>
+    </div>
+    <br>
+    <hr>
+  </div>
+  
+  
+  <div class="reviews-container">
+    <div class="review-header" (click)="toggleReviewVisibility()">
+      <span class="arrow-icon" [class.open]="showReviews"></span>
+      <span class="more-info-text">Let's Take A Look At Your Reviews!</span>
+    </div>
+  
+    <!-- Reviews Dropdown Content -->
+    <div *ngIf="showReviews" class="reviews-dropdown">
+      <div *ngFor="let review of userReviews">
+        <div class="single-review">
+        <app-display-review [review]="review"></app-display-review>
+        </div>
+      </div>
+    </div>
+  </div>
+  

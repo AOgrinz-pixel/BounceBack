@@ -16,4 +16,8 @@ export class LayoutComponent {
   logout(): void {
     this.authService.logout();
   }
+
+  getUsername(): string {
+    return this.authService.getUsername();
+  }
 }
