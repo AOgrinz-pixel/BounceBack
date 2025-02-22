@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DataFetcherComponent } from './data-fetcher/data-fetcher.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { CompanyComponent } from './home-page/company-display/company-display.component';
+import { CompanyPageComponent } from './company-page/company-page.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'test', component: DataFetcherComponent }, 
-  { path: 'company/:id', component: CompanyComponent }
+  { path: 'company/:name', component: CompanyPageComponent },
+  {path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
 
 @Component({

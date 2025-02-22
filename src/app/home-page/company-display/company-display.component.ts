@@ -11,7 +11,4 @@ import { RouterModule } from '@angular/router';
 })
 export class CompanyComponent {
   @Input() company: any; // The company data will be passed to this component
-  ngOnInit() {
-    console.log('Company data:', this.company.data);
-  }
 }

@@ -1,0 +1,31 @@
+.single-review {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #0d0b12;
+    border-radius: 5px;
+    background-color: #92cade;
+}
+table {
+    width: 100%; /* Make table take up full width */
+    border-collapse: collapse; /* Collapse borders to make it look neat */
+    margin: 20px 0; /* Optional: space around the table */
+  }
+  
+  /* Target the table rows */
+  tr {
+    border-bottom: 1px solid #ddd; /* Optional: add a border between rows */
+  }
+  
+  /* Add padding inside the table cells */
+  td {
+    padding: 10px 15px; /* Adjust the padding (top-bottom, left-right) */
+    text-align: left; /* Optional: make text align to the left */
+  }
+  
+  /* Optional: Style the table headers */
+  th {
+    background-color: #f4f4f4; /* Light grey background for headers */
+    padding: 12px 15px; /* Add padding for headers */
+    text-align: left; /* Align headers to the left */
+    font-weight: bold;
+  }
