@@ -3,12 +3,13 @@
 </head>
 
 <body>
-<div>
+<div class="search-term">
   <input
     type="text"
     [(ngModel)]="searchTerm"
     placeholder="Search companies by name"
     (input)="onSearch()"
+    class =  "search-input"
   />
 </div>
 
@@ -20,7 +21,7 @@
 </div>
 
 <div *ngIf="filteredCompanies.length === 0">
-  <p>No companies found</p>
+  <p class="no-companies-message">No companies found</p>
 </div>
 
 </body>
