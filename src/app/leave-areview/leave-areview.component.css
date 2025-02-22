@@ -1,0 +1,103 @@
+/* General layout for the form container */
+.form-container {
+    max-width: 600px;  /* Limit the width of the form */
+    margin: 0 auto;  /* Center the form horizontally */
+    padding: 20px;
+    background-color: #fff;  /* White background for the form */
+    border-radius: 8px;  /* Rounded corners for the form */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Soft shadow for depth */
+  }
+  
+  h2 {
+    font-size: 24px;  /* Increase font size for the heading */
+    font-weight: 600;  /* Make the heading bolder */
+    color: #3a5a9e;  /* Professional blue color */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;  /* Make the label a block element for spacing */
+  }
+  
+  input, select, textarea {
+    width: 100%;  /* Full width for form fields */
+    padding: 10px;
+    margin-bottom: 15px;  /* Space between input fields */
+    border: 1px solid #ccc;  /* Light grey border */
+    border-radius: 5px;  /* Rounded corners for inputs */
+    font-size: 16px;  /* Slightly larger font */
+    box-sizing: border-box;  /* Ensure padding is included in width */
+    transition: border-color 0.3s ease-in-out;  /* Smooth transition for focus */
+  }
+  
+  input:focus, select:focus, textarea:focus {
+    border-color: #3a5a9e;  /* Blue border on focus */
+    outline: none;  /* Remove default focus outline */
+  }
+  
+  textarea {
+    height: 100px;  /* Set a specific height for the text area */
+    resize: vertical;  /* Allow resizing vertically */
+  }
+  
+  button {
+    background-color: #3a5a9e;  /* Blue background for the button */
+    color: #fff;  /* White text color */
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;  /* Rounded corners for the button */
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;  /* Smooth background color change */
+    width: 100%;  /* Full width button */
+    box-sizing: border-box;
+  }
+  
+  button:hover {
+    background-color: #1e3d59;  /* Darker blue on hover */
+  }
+  
+  button:disabled {
+    background-color: #ddd;  /* Light grey background when disabled */
+    cursor: not-allowed;  /* Change cursor to indicate disabled state */
+  }
+  
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.6;  /* Increase line height for readability */
+  }
+  
+  div * {
+    margin-bottom: 10px;  /* Add bottom margin to all elements inside the form */
+  }
+  
+  /* Additional styling for when the form is submitted */
+  .submitted {
+    background-color: #f9f9f9;  /* Light background for the submitted state */
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .submitted button {
+    width: auto;  /* Make the submit button not full-width in the submitted state */
+    margin: 0 auto;
+    display: block;
+  }
+  
