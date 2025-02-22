@@ -20,6 +20,7 @@ nav {
     padding: 8px 15px;  /* Add space around text */
     border-radius: 5px;  /* Rounded corners */
     transition: background-color 0.3s ease;  /* Smooth transition */
+    padding-bottom: 10px;
   }
   
   /* Hover effect for links */
@@ -37,4 +38,9 @@ nav {
   /* Prevent content from being hidden under the fixed navbar */
   body {
     padding-top: 50px;  /* Adjust body content position to not overlap the navbar */
-  }
+}
+
+.body {
+  padding-top: 50px;
+}
+
