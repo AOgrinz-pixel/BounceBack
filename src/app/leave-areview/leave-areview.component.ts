@@ -45,6 +45,14 @@ export class LeaveAReviewComponent implements OnInit {
   saveInput() {
     // You can now save the data, or send it to an API, etc.
     const formData = this.userForm.value
+
+    // Convert the applyAgain value to 'TRUE' or 'FALSE' before sending
+    if (this.userForm.value.applyAgain) {
+      formData.applyAgain = 'TRUE';  // Set to 'TRUE' if checkbox is checked
+    } else {
+      formData.applyAgain = 'FALSE'; // Set to 'FALSE' if checkbox is unchecked
+    }
+
     this.http.post('http://localhost:8080/company/review', formData).subscribe(
       (response) => {
         console.log('API Response:', response); // Handle success response
