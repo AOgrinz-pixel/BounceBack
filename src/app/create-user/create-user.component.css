@@ -1,0 +1,91 @@
+
+  /* Container for the login form */
+.login-container {
+    max-width: 400px;  /* Limit the width of the form */
+    margin: 0 auto;  /* Center the form horizontally */
+    padding: 30px;
+    background-color: #fff;  /* White background for the form */
+    border-radius: 8px;  /* Rounded corners for the form */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* Soft shadow for depth */
+    font-family: 'Arial', sans-serif;  /* Clean, modern font */
+  }
+  
+  /* Header styling */
+  h2 {
+    font-size: 24px;
+    color: #333;  /* Dark color for the heading */
+    text-align: center;  /* Center the heading */
+    margin-bottom: 20px;  /* Space below the heading */
+  }
+  
+  /* Label styling */
+  label {
+    font-size: 16px;
+    color: #555;  /* Slightly lighter text color for labels */
+    margin-bottom: 8px;
+    display: block;  /* Ensure labels are block elements */
+  }
+  
+  /* Styling for the input fields */
+  input {
+    width: 100%;  /* Full width of the container */
+    padding: 12px;  /* Padding inside the input */
+    margin-bottom: 15px;  /* Space between inputs */
+    border: 1px solid #ccc;  /* Light border */
+    border-radius: 5px;  /* Rounded corners */
+    font-size: 16px;
+    box-sizing: border-box;  /* Include padding in width calculation */
+    transition: border-color 0.3s ease-in-out;  /* Smooth transition on focus */
+  }
+  
+  /* Input fields on focus */
+  input:focus {
+    border-color: #3a5a9e;  /* Blue border when focused */
+    outline: none;  /* Remove the default outline */
+  }
+  
+  /* Button styling */
+  button {
+    background-color: #3a5a9e;  /* Blue background */
+    color: white;  /* White text */
+    padding: 12px;
+    width: 100%;  /* Full width of the container */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;  /* Pointer cursor to indicate it's clickable */
+    transition: background-color 0.3s ease;  /* Smooth transition on hover */
+  }
+  
+  button:hover {
+    background-color: #1e3d59;  /* Darker blue on hover */
+  }
+  
+  button:disabled {
+    background-color: #ccc;  /* Grey out the button when disabled */
+    cursor: not-allowed;  /* Change cursor to show it's not clickable */
+  }
+  
+  /* Skip login button styling */
+  button.skip-login {
+    background-color: #f1f1f1;  /* Lighter background for the skip login button */
+    color: #333;  /* Dark text color */
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;  /* Space above the button */
+    border: 1px solid #ccc;  /* Light border */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button.skip-login:hover {
+    background-color: #e1e1e1;  /* Slightly darker on hover */
+  }
+  
+  /* Styling for the form container */
+  form {
+    display: flex;
+    flex-direction: column;  /* Stack the inputs vertically */
+  }
+  

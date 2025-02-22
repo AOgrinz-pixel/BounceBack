@@ -8,12 +8,14 @@ import { LeaveAReviewComponent } from './app/leave-areview/leave-areview.compone
 import { LayoutComponent } from './app/layout/layout.component';
 import { LoginpageComponent } from './app/loginpage/loginpage.component';
 import { HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { CreateUserComponent } from './app/create-user/create-user.component';
 
 
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter([
       { path: 'login', component: LoginpageComponent },
+      { path: 'createuser', component: CreateUserComponent },
       { path: '', redirectTo: 'login', pathMatch: 'full' },  // Default route
       {
         path: '',
