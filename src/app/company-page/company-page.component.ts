@@ -4,6 +4,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';  // Assumin
 import { CommonModule } from '@angular/common';
 import { DisplayReviewComponent } from "./display-review/display-review.component";
 import { LeaveAReviewComponent } from '../leave-areview/leave-areview.component';
+import {AuthService} from "../auth.service";
 
 @Component({
   selector: 'app-company-page',
@@ -19,7 +20,8 @@ export class CompanyPageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private http: HttpClient
+    private http: HttpClient,
+    public authService: AuthService
   ) {}
 
   ngOnInit(): void {
