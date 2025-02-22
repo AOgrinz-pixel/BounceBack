@@ -3,6 +3,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CompanyComponent } from "./company-display/company-display.component";
 import { CommonModule } from '@angular/common';
 import {FormsModule} from "@angular/forms";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -15,12 +16,30 @@ export class HomePageComponent implements OnInit {
   companies: any[] = []; // Array to hold the list of companies
   searchTerm: string = '';
   filteredCompanies : any[] = [];
+  totalReviewsCount: number = 0; // To hold the total number of reviews
 
-  constructor(private http: HttpClient) {}
+
+  constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
 
   ngOnInit() {
     this.getCompanies();
+    this.getTotalReviews();
+  }
+
+
+  // Fetch total reviews from the backend
+  getTotalReviews(): void {
+    const url = `http://localhost:8080/reviews/total`;  // Adjust to the actual endpoint for total reviews
+    this.http.get<number>(url).subscribe(
+      (response) => {
+        this.totalReviewsCount = response; // Store the total reviews count
+        console.log('Total reviews:', this.totalReviewsCount);
+      },
+      (error) => {
+        console.error('Error fetching total reviews:', error);
+      }
+    );
   }
 
   onSearch(): void {

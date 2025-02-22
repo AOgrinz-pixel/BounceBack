@@ -2,14 +2,14 @@
 
     <h2 class="companyTitle">Companies</h2>
 
-    <div *ngFor="let review of companyReviews">
+    <div *ngFor="let review of filteredReviews">
       <app-display-review [review]="review"></app-display-review>
     </div>
   </div>
 
 
 
-<app-leave-areview *ngIf="authService.isAuthenticated()"></app-leave-areview>
+<app-leave-areview *ngIf="authService.isAuthenticated()", [companyName]= "companyInfo?.name"></app-leave-areview>
 
 <!-- If not authenticated, show a message or a login prompt -->
 <div *ngIf="!authService.isAuthenticated()">

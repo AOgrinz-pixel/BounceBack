@@ -38,7 +38,9 @@ export class LeaveAReviewComponent implements OnInit {
 
   ngOnInit() {
     // You can add any logic you want to run on initialization here
-
+    if (this.companyName) {
+      this.userForm.get('companyName')?.setValue(this.companyName); // Auto-populate companyName field
+    }
   }
 
   // This function will save the user input when the form is submitted
