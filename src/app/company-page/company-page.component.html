@@ -1,11 +1,7 @@
 <p class="review-title">{{compName}}</p>
 
 <div>
-
-    <h2 class="companyTitle">Companies</h2>
-    <input type="text" [(ngModel)]="searchTerm" (input)="filterReviews()" placeholder="Search by role" />
-
-    <div *ngFor="let review of filteredReviews">
+    <div *ngFor="let review of companyReviews">
       <app-display-review [review]="review"></app-display-review>
     </div>
   </div>

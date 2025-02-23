@@ -87,7 +87,7 @@ export class CompanyPageComponent implements OnInit {
   companyData: any;
   companyReviews: any;
   companyInfo: any;
-  compName: string = ''
+  compName: string = '';
 
   filteredReviews: any[] = [];
   searchTerm: string = '';
@@ -121,24 +121,13 @@ export class CompanyPageComponent implements OnInit {
 
       this.companyInfo = this.companyData.company;
       this.companyReviews = this.companyData.reviews;
-      this.compName = name;
+      this.compName = this.companyInfo.name;
       console.log(this.companyReviews);
 
     });
   }
 
   // Filter reviews based on the role attribute
-  filterReviews() {
-    if (this.searchTerm.trim() === '') {
-      // If search term is empty, show all reviews
-      this.filteredReviews = this.companyReviews;
-    } else {
-      // Otherwise, filter reviews based on the role
-      this.filteredReviews = this.companyReviews.filter(review =>
-        review.role.toLowerCase().includes(this.searchTerm.toLowerCase())
-      );
-    }
-  }
 
   showReviewSlide = false;
 
