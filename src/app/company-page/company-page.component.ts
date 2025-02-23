@@ -29,26 +29,49 @@ export class CompanyPageComponent implements OnInit {
 
     @HostListener('window:scroll', ['$event'])
     onScroll(event: Event): void {
-      const scrollY = window.scrollY;
-
-      // Ensure the image moves up from the bottom, but doesn't go above the top of the viewport
-      this.topPosition = `calc(100vh - ${scrollY}px - 300px)`;  // Moves upward as you scroll
-      this.topPosition3 = `calc(100vh - ${scrollY}px - 450px)`;  // Moves upward as you scroll
-      this.topPosition4 = `calc(100vh + ${scrollY}px - 450px)`;  // Moves downward as you scroll
-
-
-
-      // Calculate rotation for a smooth back-and-forth movement
-      const rotation = (Math.sin(scrollY / 100) * 15).toFixed(2);  // Sinusoidal rotation
-      this.transformStyle = `rotate(${rotation}deg)`;
-
-      // Ensure the image moves up from the bottom, but doesn't go above the top of the viewport
-      this.topPosition2 = `calc(100vh + ${scrollY}px - 1000px)`;  // Moves upward as you scroll
-
-      // Calculate rotation for a smooth back-and-forth movement
-      const rotation2 = ((Math.sin(scrollY / 100) * 15) + 180).toFixed(2);  // Sinusoidal rotation
-      this.transformStyle2 = `rotate(${rotation2}deg)`;
+//       const scrollY = window.scrollY;
+//
+//       // Ensure the image moves up from the bottom, but doesn't go above the top of the viewport
+//       this.topPosition = `calc(100vh - ${scrollY}px - 300px)`;  // Moves upward as you scroll
+//       this.topPosition3 = `calc(100vh - ${scrollY}px - 450px)`;  // Moves upward as you scroll
+//       this.topPosition4 = `calc(100vh + ${scrollY}px - 450px)`;  // Moves downward as you scroll
+//
+//
+//
+//       // Calculate rotation for a smooth back-and-forth movement
+//       const rotation = (Math.sin(scrollY / 100) * 15).toFixed(2);  // Sinusoidal rotation
+//       this.transformStyle = `rotate(${rotation}deg)`;
+//
+//       // Ensure the image moves up from the bottom, but doesn't go above the top of the viewport
+//       this.topPosition2 = `calc(100vh + ${scrollY}px - 1000px)`;  // Moves upward as you scroll
+//
+//       // Calculate rotation for a smooth back-and-forth movement
+//       const rotation2 = ((Math.sin(scrollY / 100) * 15) + 180).toFixed(2);  // Sinusoidal rotation
+//       this.transformStyle2 = `rotate(${rotation2}deg)`;
+      this.updatePosition();
     }
+
+  private updatePosition() {
+    const scrollY = window.scrollY;
+
+    // Ensure the image moves up from the bottom, but doesn't go above the top of the viewport
+    this.topPosition = `calc(100vh - ${scrollY}px - 300px)`;  // Moves upward as you scroll
+    this.topPosition3 = `calc(100vh - ${scrollY}px - 450px)`;  // Moves upward as you scroll
+    this.topPosition4 = `calc(100vh + ${scrollY}px - 450px)`;  // Moves downward as you scroll
+
+
+
+    // Calculate rotation for a smooth back-and-forth movement
+    const rotation = (Math.sin(scrollY / 100) * 15).toFixed(2);  // Sinusoidal rotation
+    this.transformStyle = `rotate(${rotation}deg)`;
+
+    // Ensure the image moves up from the bottom, but doesn't go above the top of the viewport
+    this.topPosition2 = `calc(100vh + ${scrollY}px - 1000px)`;  // Moves upward as you scroll
+
+    // Calculate rotation for a smooth back-and-forth movement
+    const rotation2 = ((Math.sin(scrollY / 100) * 15) + 180).toFixed(2);  // Sinusoidal rotation
+    this.transformStyle2 = `rotate(${rotation2}deg)`;
+  }
 
 
   companyData: any;
@@ -63,7 +86,7 @@ export class CompanyPageComponent implements OnInit {
 
   ngOnInit(): void {
     // Get the 'id' parameter from the route
-
+    this.updatePosition();
     this.route.paramMap.subscribe(params => {
       const companyName = params.get('name');
       this.fetchCompanyData(companyName);
