@@ -9,6 +9,12 @@ body {
     padding: 0;
   }
 
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+
   
   
   /* Container for Welcome User */
@@ -86,6 +92,8 @@ body {
     padding: 30px;
     margin-top: 10px;
     border-radius: 8px;
+    max-width: 100vw;
+    overflow: hidden;
 
 }
   
@@ -156,17 +164,29 @@ body {
 }
 
 .image-overlay-container {
-    position: absolute;
-    right: -850px; /* Adjust this to control overlap */
-    transform: translateY(-50%);
-    top: 330px;
+  position: absolute; /* Fixes it to the screen */
+  right: 200px; /* Adjust this to place it correctly */
+  top: 50px; /* Adjust as needed */
+  max-width: 600px; /* Set a reasonable max width */
+  height: auto;
+  z-index: 1; /* Ensures it's above other elements */
+  overflow: hidden;
+  pointer-events: none; /* Ensures it doesn't interfere with clicks */
 }
 
 .user-image {
-    width: 40%; /* Set image size */
-    height: auto;
-    border-radius: 8px; /* Optional: for rounded corners */
+  width: 100%; /* Make it responsive within its container */
+  height: auto;
+  display: block; /* Remove extra space below the image */
+  object-fit: contain;
 }
+
+/* Prevent horizontal scrolling */
+html, body {
+  overflow-x: hidden; 
+  max-width: 100vw;
+}
+
 
 /* Star Rating Styles */
 .stars {

@@ -20,6 +20,7 @@ export class UserPageComponent implements OnInit {
   userStats: any;
   selectedReview: any = null;
   showReviews = false;
+  randomImage: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -35,6 +36,14 @@ export class UserPageComponent implements OnInit {
         this.fetchUserData(userName);
         
       });
+
+      const backgroundImages = [
+        '/assets/images/backgroundtest6.png',
+      ];
+  
+      // Randomly pick an image from the array
+      const randomIndex = Math.floor(Math.random() * backgroundImages.length);
+      this.randomImage = backgroundImages[randomIndex];
 
     }
   
