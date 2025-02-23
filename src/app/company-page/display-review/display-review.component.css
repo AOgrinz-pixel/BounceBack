@@ -1,4 +1,6 @@
 /* Star Rating - Make stars smaller */
+@import url('https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Mina:wght@400;700&family=Nova+Flat&display=swap');
+
 .star-rating img {
   width: 15px;  /* Set the width to 15px for smaller stars */
   height: auto; /* Maintain aspect ratio */
@@ -7,7 +9,7 @@
 
 /* Global Styles */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Mina', sans-serif;
   background-color: #f4f4f4;
   margin: 0;
   padding: 0;
@@ -59,12 +61,14 @@ body {
 .review-label {
   font-weight: 500;
   color: #555;
+  font-family: 'Mina', sans-serif;
 }
 
 .review-value {
   font-weight: 600;
   color: #000;
   text-align: right;
+  font-family: 'Mina', sans-serif;
 }
 
 .review-item:last-child {

@@ -1,4 +1,6 @@
 /* Global Styles for this section */
+@import url('https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Mina:wght@400;700&family=Nova+Flat&display=swap');
+
 .not-logged-in {
     background-color: #fff;  /* White background */
     padding: 20px;
@@ -171,4 +173,5 @@
   text-align: center;
   top: 10px;
   z-index: 10000;
+  font-family: 'Mina', sans-serif;
 }

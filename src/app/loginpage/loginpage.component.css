@@ -1,4 +1,6 @@
 /* Container for the login form */
+@import url('https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Mina:wght@400;700&family=Nova+Flat&display=swap');
+
 .login-container {
     max-width: 400px;  /* Limit the width of the form */
     margin: 0 auto;  /* Center the form horizontally */
@@ -6,7 +8,7 @@
     background-color:  rgba(255, 255, 255, 0.8);  /* White background for the form */
     border-radius: 8px;  /* Rounded corners for the form */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* Soft shadow for depth */
-    font-family: 'Arial', sans-serif;  /* Clean, modern font */
+    font-family: 'Mina', sans-serif;  /* Clean, modern font */
   }
   
   /* Header styling */

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Mina:wght@400;700&family=Nova+Flat&display=swap');
+
 nav {
     background-color: #5176c5;  /* Dark background color */
     color: white;            /* White text */
@@ -23,6 +25,7 @@ nav {
     border-radius: 5px;  /* Rounded corners */
     transition: background-color 0.3s ease;  /* Smooth transition */
     padding-bottom: 10px;
+    font-family: 'Mina', sans-serif;
   }
 
   /* Hover effect for links */
