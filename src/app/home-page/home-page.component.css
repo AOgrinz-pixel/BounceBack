@@ -62,16 +62,14 @@ body {
 /* Each company card container */
 .company-item {
   /*background-color: #f0f0f0; /* White background */
-  background-color: rgba(240, 240, 240, 0.9); /* Light gray background with 90% opacity */
+  background-color: rgba(240, 240, 240, 0); /* Light gray background with 90% opacity */
 
   padding: 20px;
   border-radius: 12px; /* Slightly rounded corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   width: 100%; /* Full width of grid cell */
   max-width: 450px; /* Ensures cards don’t become too wide */
   height: 350px; /* Fixed height to avoid excessive stretching */
   transition: box-shadow 0.3s ease, transform 0.3s ease;
-  border: 1px solid #e0e0e0; /* Light gray border */
   z-index: 2;
   text-align: center; /* Center the content inside the card */
   display: flex;

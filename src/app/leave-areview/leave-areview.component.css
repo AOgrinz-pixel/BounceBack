@@ -1,4 +1,6 @@
 /* General layout for the form container */
+@import url('https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Mina:wght@400;700&family=Nova+Flat&display=swap');
+
 .form-container {
     max-width: 600px;  /* Limit the width of the form */
     margin: 0 auto;  /* Center the form horizontally */
@@ -14,6 +16,7 @@
     color: #3a5a9e;  /* Professional blue color */
     text-align: center;
     margin-bottom: 20px;
+    font-family: 'Mina', sans-serif;
   }
   
   label {
@@ -183,7 +186,7 @@
     padding: 30px;
     max-width: 700px;
     margin: 0 auto;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Mina', sans-serif;
   }
   
   /* Title styling */
@@ -204,6 +207,7 @@
   /* Details Section */
   .submitted-details {
     margin-bottom: 20px;
+    font-family: 'Mina', sans-serif;
   }
   
   .submitted-details p {
@@ -211,6 +215,7 @@
     line-height: 1.5;
     color: #333;
     margin-bottom: 10px;
+    font-family: 'Mina', sans-serif ;
   }
   
   .submitted-details strong {
@@ -270,5 +275,6 @@
     background-color: #f9f9f9; /* Optional background for the form */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for form */
     border-radius: 8px; /* Optional: rounded corners */
+    font-family: 'Mina', sans-serif;
   }
   
