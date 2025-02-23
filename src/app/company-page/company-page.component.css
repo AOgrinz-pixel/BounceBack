@@ -163,9 +163,13 @@
   }
 
 .review-title {
-  font-size: 24px;
-  color: #4285F4;
-  font-weight: 500;
+  font-size: 40px;
+  color: #000000;
+  font-weight: 700;
   margin: 0;
   text-transform: capitalize;
+  text-align: center;
+  position: sticky;
+  top: 10px;
+  z-index: 10000;
 }
