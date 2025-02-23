@@ -1,22 +1,20 @@
 <body>
-    <div class="company">
+    <div class="company-card">
       <a [routerLink]="['/company', company.name]" class="company-name">{{ company.name }}</a>
-      <table class="company-table">
-        <thead>
-          <tr>
-            <th>Company Competitiveness</th>
-            <th>Company Rating</th>
-            <th>Apply Again</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{ company.competitiveness }}</td>
-            <td>{{ company.rating }}</td>
-            <td>{{ company.applyAgain }}%</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="company-details">
+        <div class="detail-item">
+          <span class="label">Company Competitiveness:</span>
+          <span class="value">{{ company.competitiveness }}</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Company Rating:</span>
+          <span class="value">{{ company.rating }}</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Apply Again:</span>
+          <span class="value">{{ company.applyAgain }}%</span>
+        </div>
+      </div>
     </div>
   </body>
   
