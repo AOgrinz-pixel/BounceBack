@@ -38,6 +38,47 @@
   transition: top 0.1s ease-out, transform 0.1s ease-out;  /* Smooth transition for the top value */
 }
 
+.left-white-image {
+  position: fixed;
+  left: 200px;
+  top: 0;  /* Start at the bottom of the viewport */
+  transform: translateY(-50%);
+  max-width: 500px;
+  height: auto;
+  z-index: 0;
+  transition: top 0.1s ease-out;  /* Smooth transition for the top value */
+}
+
+.right-white-image {
+  position: fixed;
+  right: 200px;
+  top: 0;  /* Start at the bottom of the viewport */
+  transform: translateY(-50%);
+  max-width: 500px;
+  height: auto;
+  z-index: 0;
+  transition: top 0.1s ease-out;  /* Smooth transition for the top value */
+}
+
+.left-tracks {
+  position: fixed;
+  left: 190px;
+  top: 100px;  /* Start at the bottom of the viewport */
+  max-width: 100px;
+  height: auto;
+  z-index: -1;
+}
+
+.right-tracks {
+  position: fixed;
+  right: 190px;
+  top: 100px;  /* Start at the bottom of the viewport */
+  max-width: 100px;
+  height: auto;
+  z-index: -1;
+  transform: rotate(180deg);
+}
+
 .right-image {
   position: fixed;
   right: 0;

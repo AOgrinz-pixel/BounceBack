@@ -22,12 +22,21 @@ export class CompanyPageComponent implements OnInit {
     topPosition2: string = '100vh';
     transformStyle2: string = 'rotate(180deg)';  // Initial rotation
 
+    topPosition3: string = '100vh';
+    topPosition4: string = '100vh';
+
+
+
     @HostListener('window:scroll', ['$event'])
     onScroll(event: Event): void {
       const scrollY = window.scrollY;
 
       // Ensure the image moves up from the bottom, but doesn't go above the top of the viewport
       this.topPosition = `calc(100vh - ${scrollY}px - 300px)`;  // Moves upward as you scroll
+      this.topPosition3 = `calc(100vh - ${scrollY}px - 450px)`;  // Moves upward as you scroll
+      this.topPosition4 = `calc(100vh + ${scrollY}px - 450px)`;  // Moves downward as you scroll
+
+
 
       // Calculate rotation for a smooth back-and-forth movement
       const rotation = (Math.sin(scrollY / 100) * 15).toFixed(2);  // Sinusoidal rotation
