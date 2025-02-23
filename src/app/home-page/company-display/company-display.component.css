@@ -52,11 +52,25 @@ body {
   color: #000; /* Black text for the company name */
   margin-bottom: 15px;
   transition: color 0.3s;
-  text-align: center;
+  text-align: left; /* Align text to the left */
+  display: flex;
+  align-items: center; /* Aligns logo and name vertically */
 }
 
 .company-name:hover {
   color: #333; /* Slight color change on hover */
+}
+
+.company-logo-container {
+  display: flex;
+  align-items: center; /* Vertically aligns the logo */
+  margin-right: 10px; /* Space between logo and company name */
+}
+
+.company-logo {
+  max-width: 30px; /* Makes the logo smaller */
+  max-height: 30px; /* Ensure the logo doesn't exceed this height */
+  border-radius: 5px;
 }
 
 .company-details {

@@ -1,28 +1,31 @@
-<body >
-    <div (click)="goCompany()" class="company-card" [ngStyle]="{'background-image': 'url(' + randomImage + ')'}">
-      <a [routerLink]="['/company', company.name]" class="company-name">{{ company.name }}</a>
-      <div class="company-details">
-        <div class="detail-item">
-          <span class="label">Company Competitiveness:</span>
-          <span class="stars">
-            <div class="star-rating">
-              <img *ngFor="let star of getStars('compet')" [src]="'assets/images/' + star + 'star.png'" alt="star" />
-            </div>
-          </span>
-        </div>
-        <div class="detail-item">
-          <span class="label">Company Rating:</span>
-          <span class="stars">
+<div (click)="goCompany()" class="company-card" [ngStyle]="{'background-image': 'url(' + randomImage + ')'}">
+    <a [routerLink]="['/company', company.name]" class="company-name">
+      <div *ngIf="companyLogo" class="company-logo-container">
+        <img [src]="companyLogo" alt="Company Logo" class="company-logo" />
+      </div>
+      <span class="company-name-text">{{ company.name }}</span>
+    </a>
+    <div class="company-details">
+      <div class="detail-item">
+        <span class="label">Company Competitiveness:</span>
+        <span class="stars">
+          <div class="star-rating">
+            <img *ngFor="let star of getStars('compet')" [src]="'assets/images/' + star + 'star.png'" alt="star" />
+          </div>
+        </span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Company Rating:</span>
+        <span class="stars">
           <div class="star-rating">
             <img *ngFor="let star of getStars('rating')" [src]="'assets/images/' + star + 'star.png'" alt="star" />
           </div>
         </span>
-        </div>
-        <div class="detail-item">
-          <span class="label">Apply Again:</span>
-          <span class="value" id="rating-values"><p>{{ company.applyAgain }}%</p></span>
-        </div>
+      </div>
+      <div class="detail-item">
+        <span class="label">Apply Again:</span>
+        <span class="value" id="rating-values"><p>{{ company.applyAgain }}%</p></span>
       </div>
     </div>
-  </body>
+  </div>
   

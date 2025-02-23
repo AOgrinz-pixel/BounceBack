@@ -1,19 +1,20 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-company',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, HttpClientModule],
   templateUrl: './company-display.component.html',
   styleUrls: ['./company-display.component.css']
 })
 
 export class CompanyComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private http: HttpClient) {}
   @Input() company: any; // The company data will be passed to this component
 
 
@@ -60,6 +61,21 @@ export class CompanyComponent {
     // Randomly pick an image from the array
     const randomIndex = Math.floor(Math.random() * backgroundImages.length);
     this.randomImage = backgroundImages[randomIndex];
+
+    this.getCompLogo(this.company.name);
+  }
+
+
+  companyLogo: any;
+  getCompLogo(name: string): void {
+    const url = `https://logo.clearbit.com/${name}.com`;  // Adjust to the actual endpoint for total reviews
+    this.http.get(url, { responseType: 'blob' }).subscribe(blob => {
+      // Convert the blob to a URL
+      this.companyLogo = URL.createObjectURL(blob);
+    }, error => {
+      console.error("Error fetching the image: ", error);
+      this.companyLogo = null;
+    })
   }
 
   goCompany() {
