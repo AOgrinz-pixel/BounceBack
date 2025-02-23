@@ -2,12 +2,12 @@ body {
   font-family: 'Arial', sans-serif;
   background-color: #f5f5f5;
   margin: 0;
-  padding: 0;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   height: 100vh;
   flex-wrap: wrap;
+  gap: 20px; /* Adds spacing between cards */
 }
 
 .company-card {
@@ -17,14 +17,17 @@ body {
   background-position: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
-  padding: 20px;
-  width: 280px;
+  padding: 30px; /* Increased padding */
+  margin-bottom: -300px;
+  width: 350px; /* Increased card width */
+  height: auto;
   margin: 20px;
   display: flex;
   flex-direction: column;
   position: relative;
   color: #000; /* Black text for readability */
   overflow: hidden;
+  transition: all 0.3s ease; /* Smooth transition on hover */
 }
 
 .company-card::before {
@@ -34,17 +37,23 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.2); /* Light dark overlay for subtle opacity effect */
+  background: rgba(0, 0, 0, 0.2); /* Dark overlay */
   z-index: -1;
+  transition: background 0.3s ease;
+}
+
+.company-card:hover::before {
+  background: rgba(0, 0, 0, 0.4); /* Darker overlay on hover */
 }
 
 .company-name {
-  font-size: 1.8em;
+  font-size: 2em; /* Increased font size for company name */
   font-weight: bold;
   text-decoration: none;
   color: #000; /* Black text for the company name */
   margin-bottom: 15px;
   transition: color 0.3s;
+  text-align: center;
 }
 
 .company-name:hover {
@@ -54,12 +63,13 @@ body {
 .company-details {
   display: flex;
   flex-direction: column;
+  gap: 15px; /* Increased space between details */
 }
 
 .detail-item {
   display: flex;
   justify-content: space-between;
-  padding: 12px 0;
+  padding: 15px 0; /* Increased padding */
   border-bottom: 1px solid #000; /* Black border between items */
 }
 
@@ -69,9 +79,26 @@ body {
 }
 
 .value {
-  color: #333; /* Dark gray text for values */
+  color: #000; /* Black text for values */
   text-align: right;
   flex-shrink: 0;
+}
+
+.stars {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px; /* Increased gap between stars */
+}
+
+.star-rating img {
+  width: 25px; /* Increased star size */
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.star-rating img:hover {
+  transform: scale(1.2); /* Slight zoom effect on hover */
 }
 
 .detail-item:last-child {
@@ -81,5 +108,20 @@ body {
 @media (max-width: 768px) {
   .company-card {
     width: 90%; /* Responsive card width */
+    padding: 20px; /* Adjust padding for smaller screens */
   }
+
+  .company-name {
+    font-size: 1.6em; /* Adjust company name size for mobile */
+  }
+
+  .star-rating img {
+    width: 20px; /* Smaller star size for mobile */
+  }
+}
+
+.value p {
+  font-weight: bold; /* Make the text bold */
+  color: #003366; /* Dark blue color */
+  font-size: 18px; /* Slightly larger font size */
 }

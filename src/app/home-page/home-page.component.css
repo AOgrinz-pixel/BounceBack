@@ -48,26 +48,47 @@ body {
 /* Container for the company items */
 .companies-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns per row */
-  gap: 60px; /* Reduced gap to make it sleeker */
+  grid-template-columns: repeat(3, 1fr); /* Three cards per row */
+  gap: 30px; /* Reduced gap for a cleaner layout */
   margin: 0 20px;
   justify-items: center;
+  padding-bottom: 30px; /* Adds space below the grid */
 }
 
 /* Each company card container */
 .company-item {
-  background-color: #f0f0f0; /* White background */
+  background-color: #fff; /* White background for the cards */
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  width: 100%;
-  transition: box-shadow 0.3s ease;
+  border-radius: 12px; /* Slightly rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 100%; /* Full width of grid cell */
+  max-width: 450px; /* Ensures cards don’t become too wide */
+  height: 350px; /* Fixed height to avoid excessive stretching */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
   border: 1px solid #e0e0e0; /* Light gray border */
   z-index: 2;
+  text-align: center; /* Center the content inside the card */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden; /* Prevents content overflow */
 }
 
 .company-item:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle hover shadow */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  transform: translateY(-5px); /* Lift the card slightly */
+}
+
+/* Add a smooth transition effect when hovering */
+.company-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* Round the corners of images */
+  transition: transform 0.3s ease;
+}
+
+.company-item:hover img {
+  transform: scale(1.05); /* Slightly zoom in the image on hover */
 }
 
 /* Styling for the "No Companies Found" message */
@@ -85,13 +106,28 @@ body {
   }
 
   .companies-list {
-    grid-template-columns: 1fr; /* Stack items on small screens */
+    grid-template-columns: 1fr 1fr; /* 2 columns on smaller screens */
   }
 
   .company-item {
     padding: 15px;
+    max-width: none; /* Allow cards to expand on smaller screens */
+    height: auto; /* Allow height to adjust based on content */
   }
 }
+
+/* Extra mobile responsive behavior (for very small screens) */
+@media (max-width: 480px) {
+  .companies-list {
+    grid-template-columns: 1fr; /* 1 card per row on very small screens */
+  }
+
+  .company-item {
+    padding: 12px;
+    max-width: none;
+  }
+}
+
 
 .bottom-image {
   position: fixed;

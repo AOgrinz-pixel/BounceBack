@@ -41,8 +41,12 @@ export class AuthService {
     return this.http.post('http://localhost:8080/login/create', credentials).pipe(
       map((response: any) => {
         console.log('User Created:', response); // Handle success response
-        this.username = credentials.username;
-        return true;
+        console.log(response);
+        if (response != null) {
+          this.username = credentials.username;
+          return true;
+        }
+        return false;
       }),
       catchError((error) => {
         console.error('Create User Error:', error); // Handle error response

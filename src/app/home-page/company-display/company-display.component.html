@@ -4,15 +4,23 @@
       <div class="company-details">
         <div class="detail-item">
           <span class="label">Company Competitiveness:</span>
-          <span class="value">{{ company.competitiveness }}</span>
+          <span class="stars">
+            <div class="star-rating">
+              <img *ngFor="let star of getStars('compet')" [src]="'assets/images/' + star + 'star.jpg'" alt="star" />
+            </div>
+          </span>
         </div>
         <div class="detail-item">
           <span class="label">Company Rating:</span>
-          <span class="value">{{ company.rating }}</span>
+          <span class="stars">
+          <div class="star-rating">
+            <img *ngFor="let star of getStars('rating')" [src]="'assets/images/' + star + 'star.jpg'" alt="star" />
+          </div>
+        </span>
         </div>
         <div class="detail-item">
           <span class="label">Apply Again:</span>
-          <span class="value">{{ company.applyAgain }}%</span>
+          <span class="value" id="rating-values"><p>{{ company.applyAgain }}%</p></span>
         </div>
       </div>
     </div>

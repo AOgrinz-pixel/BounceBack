@@ -31,7 +31,7 @@
   position: fixed;
   left: 0;
   /*top: 0;  /* Start at the bottom of the viewport */
-  margin-right 20px;
+  margin-right: 20px;
   transform: translateY(-50%);
   max-width: 500px;
   height: auto;
@@ -41,7 +41,7 @@
 
 .left-white-image {
   position: fixed;
-  margin-right 20px;
+  margin-right: 20px;
   left: 200px;
   top: 0px;  /* Start at the bottom of the viewport */
   transform: translateY(-50%);
