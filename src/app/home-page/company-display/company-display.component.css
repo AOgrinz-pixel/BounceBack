@@ -12,7 +12,6 @@ body {
 
 .company-card {
   background-color: #ffffff;
-  background-image: url('/assets/images/backgroundtest.jpg'); /* Replace with your image URL */
   background-size: cover;
   background-position: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);

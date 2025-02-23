@@ -42,4 +42,20 @@ export class CompanyComponent {
     return stars;
   }
 
+  randomImage: string = '';
+
+  ngOnInit() {
+    const backgroundImages = [
+      '/assets/images/backgroundtest.jpg',
+      '/assets/images/backgroundtest2.jpg',
+      '/assets/images/backgroundtest3.jpg',
+      '/assets/images/backgroundtest4.jpg',
+      '/assets/images/backgroundtest5.jpg',
+    ];
+
+    // Randomly pick an image from the array
+    const randomIndex = Math.floor(Math.random() * backgroundImages.length);
+    this.randomImage = backgroundImages[randomIndex];
+  }
+
 }
