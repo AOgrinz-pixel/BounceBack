@@ -7,15 +7,23 @@
     <div class="stat-card">
       <div class="stat-item">
         <span class="stat-label">Average Competitiveness:</span>
-        <span class="stat-value"> {{ userData.competitveness }}</span>
+        <span class="stars">
+          <div class="star-rating">
+            <img *ngFor="let star of getStars('compet')" [src]="'assets/images/' + star + 'star.png'" alt="star" />
+          </div>
+        </span>
       </div>
       <div class="stat-item">
         <span class="stat-label">Average Number of Rounds:</span>
-        <span class="stat-value"> {{ userData.numRounds }}</span>
+        <span class="stat-value"> {{ userData.numRounds | number: '1.2-2' }}</span>
       </div>
       <div class="stat-item">
         <span class="stat-label">Average Confidence of Last Interview:</span>
-        <span class="stat-value"> {{ userData.confidence }}</span>
+        <span class="stars">
+          <div class="star-rating">
+            <img *ngFor="let star of getStars('whatever')" [src]="'assets/images/' + star + 'star.png'" alt="star" />
+          </div>
+        </span>
       </div>
       <div class="stat-item">
         <span class="stat-label">Most Common Rejected Type:</span>

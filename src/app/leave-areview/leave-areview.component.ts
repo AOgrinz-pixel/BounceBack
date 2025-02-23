@@ -34,7 +34,7 @@ export class LeaveAReviewComponent implements OnInit {
       rejected: new FormControl('', [Validators.required, Validators.required]),
       rounds: new FormControl(null, [Validators.required, Validators.min(0)]),
       other: new FormControl(''),
-      applyAgain: new FormControl('', [Validators.required]),
+      applyAgain: new FormControl(''),
     });
   }
 

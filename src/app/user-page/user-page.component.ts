@@ -33,7 +33,9 @@ export class UserPageComponent implements OnInit {
         const userName = params.get('name');
         this.username = userName;
         this.fetchUserData(userName);
+        
       });
+
     }
   
   fetchUserData(name: any): void {
@@ -46,6 +48,36 @@ export class UserPageComponent implements OnInit {
       console.log(this.userData)
     });
   }
+
+  getStars(type: any) {
+    let stars = [];
+    let fullStars = 0;
+    let halfStars = 0;  
+    let emptyStars = 0;
+    if (type == 'compet') {
+      fullStars = Math.floor(this.userData.competitveness);
+      halfStars = (this.userData.competitveness % 1) >= 0.5 ? 1 : 0; 
+      emptyStars = 5 - fullStars - halfStars; 
+    } else {
+      fullStars = Math.floor(this.userData.confidence);
+      halfStars = (this.userData.confidence % 1) >= 0.5 ? 1 : 0; 
+      emptyStars = 5 - fullStars - halfStars; 
+    } 
+
+    // Push the appropriate number of stars into the array
+    for (let i = 0; i < fullStars; i++) {
+      stars.push('full');
+    }
+    for (let i = 0; i < halfStars; i++) {
+      stars.push('half');
+    }
+    for (let i = 0; i < emptyStars; i++) {
+      stars.push('empty');
+    }
+
+    return stars;
+  }
+
 
   toggleReviewVisibility() {
     this.showReviews = !this.showReviews;

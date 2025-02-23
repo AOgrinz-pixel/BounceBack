@@ -169,7 +169,6 @@
   margin: 0;
   text-transform: capitalize;
   text-align: center;
-  position: sticky;
   top: 10px;
   z-index: 10000;
 }

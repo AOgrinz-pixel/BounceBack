@@ -1,4 +1,6 @@
 /* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Mina:wght@400;700&family=Nova+Flat&display=swap');
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #fff; /* White background */
@@ -6,20 +8,23 @@ body {
     margin: 0;
     padding: 0;
   }
+
+  
   
   /* Container for Welcome User */
   .welcome-user {
-    padding: 40px 0;
+    padding-bottom: -20px;
     text-align: left; /* Aligning the welcome message to the left */
     margin-left: 20px; /* Ensure it's not directly on the edge */
+    margin-right: -20px;
   }
   
   .welcome-user h1 {
-    font-size: 28px;
-    font-weight: 600;
-    color: #000;
-    margin: 0;
-  }
+    font-size: 48px;
+    font-weight: bold;
+    color: #007bff;;
+    font-family: 'Mina', sans-serif;
+}
   
   /* Container for User Stats */
   .user-stats-container {
@@ -29,6 +34,13 @@ body {
     border-radius: 8px;
     background-color: #fff; /* White background */
   }
+
+  .user-stats-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;;
+    font-family: 'Mina', sans-serif;
+}
   
   /* Title of the Stats Section */
   .section-title {
@@ -57,15 +69,16 @@ body {
   }
   
   .stat-item .stat-label {
-    font-size: 16px;
-    font-weight: 500;
-    color: #555; /* Light gray for the label */
+    color: #000; /* Black text for values */
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Mina', sans-serif;
   }
   
   .stat-item .stat-value {
     font-size: 18px;
-    font-weight: 700;
-    color: #000; /* Black text for values */
+    color: #08294d;
+    font-family: 'Mina', sans-serif;
   }
   
   /* Reviews Section */
@@ -144,9 +157,9 @@ body {
 
 .image-overlay-container {
     position: absolute;
-    right: -1200px; /* Adjust this to control overlap */
+    right: -850px; /* Adjust this to control overlap */
     transform: translateY(-50%);
-    top: 300px;
+    top: 330px;
 }
 
 .user-image {
@@ -154,5 +167,22 @@ body {
     height: auto;
     border-radius: 8px; /* Optional: for rounded corners */
 }
+
+/* Star Rating Styles */
+.stars {
+  display: flex;
+  align-items: center;
+}
+
+.star-rating {
+  display: flex;
+  gap: 4px; /* Adds spacing between stars */
+}
+
+.star-rating img {
+  width: 20px; /* Set star size */
+  height: auto;
+}
+
 
   
