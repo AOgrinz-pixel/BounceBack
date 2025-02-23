@@ -1,3 +1,5 @@
+<p class="review-title">{{compName}}</p>
+
 <div>
 
     <h2 class="companyTitle">Companies</h2>
@@ -7,7 +9,6 @@
       <app-display-review [review]="review"></app-display-review>
     </div>
   </div>
-
 
 <!-- Button to trigger the slide-up page -->
  <div class="button-container">
@@ -26,6 +27,12 @@
 <div *ngIf="!authService.isAuthenticated()" class="not-logged-in">
   <p>Please log in to leave a review.</p>
 </div>
+
+<img src="/assets/images/buudy.png" alt="Climbing Image" class="left-image" [style.top]="topPosition" [style.transform]="transformStyle">
+<img src="/assets/images/buudy.png" alt="Climbing Image" class="right-image" [style.top]="topPosition2" [style.transform]="transformStyle2">
+
+
+
 
 
 

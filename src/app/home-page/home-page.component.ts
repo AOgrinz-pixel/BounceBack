@@ -18,12 +18,33 @@ export class HomePageComponent implements OnInit {
   filteredCompanies : any[] = [];
   totalReviewsCount: number = 0; // To hold the total number of reviews
 
+  // Array of random messages
+  //This COULD be an API call, but it's not lol
+  randomMessages: string[] = [
+    "You Suck! ...But so does everyone else!",
+    "Lizards are at least 2x more likely to get rejected from an internship",
+    "Lizards struggle 50% more with making resumes",
+    "Cover Letters are a scam created by the shadow government!",
+    "I cant think of things to write!",
+    "Is this your 5th rejection today???",
+    "Come Here Often Huh?",
+  ];
+
+  // Variable to hold the selected message
+  selectedMessage: string = '';
+
+  
+
 
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
 
+
   ngOnInit() {
     this.getCompanies();
+
+    this.selectedMessage = this.getRandomMessage();
+
     this.getTotalReviews();
   }
 
@@ -41,6 +62,12 @@ export class HomePageComponent implements OnInit {
       }
     );
   }
+
+  getRandomMessage(): string {
+    const randomIndex = Math.floor(Math.random() * this.randomMessages.length);
+    return this.randomMessages[randomIndex];
+  }
+
 
   onSearch(): void {
     if (this.searchTerm.trim() === '') {
