@@ -17,6 +17,7 @@ export class HomePageComponent implements OnInit {
   filteredCompanies : any[] = [];
 
   // Array of random messages
+  //This COULD be an API call, but it's not lol
   randomMessages: string[] = [
     "You Suck! ...But so does everyone else!",
     "Lizards are at least 2x more likely to get rejected from an internship",

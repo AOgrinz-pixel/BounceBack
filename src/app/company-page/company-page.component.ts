@@ -45,6 +45,7 @@ export class CompanyPageComponent implements OnInit {
   companyData: any;
   companyReviews: any;
   companyInfo: any;
+  compName: string = ''
 
   constructor(
     private route: ActivatedRoute,
@@ -60,16 +61,19 @@ export class CompanyPageComponent implements OnInit {
       this.fetchCompanyData(companyName);
       console.log(companyName);
     });
+
   }
 
   fetchCompanyData(name: any): void {
     // Replace with your actual API endpoint
     const url = `http://localhost:8080/company/${name}`;
 
+
     this.http.get<any[]>(url).subscribe(data => {
       this.companyData = data;
       this.companyInfo = this.companyData.company;
       this.companyReviews = this.companyData.reviews;
+      this.compName = name;
       console.log(this.companyReviews);
     });
   }
