@@ -24,11 +24,11 @@ bootstrapApplication(AppComponent, {
            { path: 'company/:name', component: CompanyPageComponent },
            { path: 'review', component: LeaveAReviewComponent },
            { path: 'login', component: LoginpageComponent },
-           { path: 'user/:name', component: UserPageComponent }
+           { path: 'user/:name', component: UserPageComponent },
+           { path: 'createuser', component: CreateUserComponent },
         ]
       },
       { path: 'login', component: LoginpageComponent },
-      { path: 'createuser', component: CreateUserComponent },
     ]),
     provideHttpClient()
   ]
