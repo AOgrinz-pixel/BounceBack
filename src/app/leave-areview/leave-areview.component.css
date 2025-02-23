@@ -180,3 +180,32 @@
     outline: none;
   }
   
+  .form-wrapper {
+    display: flex;
+    align-items: center;  /* Aligns the form and images vertically */
+    justify-content: center;
+  }
+  
+  .image-left, .image-right {
+    flex: 1; /* This makes the images take equal space */
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    margin-top: -500px;
+  }
+  
+  .side-image {
+    width: 100%; /* Image fills up its container */
+    max-width: 300px; /* Maximum width for the image */
+    height: auto; /* Maintain aspect ratio */
+    position: fixed;
+    margin-top: -300px;
+  }
+  
+  .form-container {
+    flex: 2; /* This makes the form take up more space than the images */
+    padding: 20px;
+    background-color: #f9f9f9; /* Optional background for the form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for form */
+    border-radius: 8px; /* Optional: rounded corners */
+  }
+  

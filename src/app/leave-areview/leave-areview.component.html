@@ -1,5 +1,9 @@
+<div class="form-wrapper">
+  <div class="image-left">
+    <img src="/assets/images/huh.png" alt="Left Image" class="side-image" />
+  </div>
 <div class="form-container" *ngIf="!submitted">
-    <h2>User Input Form</h2>
+    <h2>Leave a Review!</h2>
     <form [formGroup]="userForm" (ngSubmit)="saveInput()">
 
       <label for="companyName">Company Name:</label>
@@ -79,3 +83,8 @@
       <button (click)="goHome()" class="submit-another-btn">Home Page</button>
     </div>
   </div>
+
+  <div class="image-right">
+    <img src="/assets/images/huh2.png" alt="Right Image" class="side-image" />
+  </div>
+
