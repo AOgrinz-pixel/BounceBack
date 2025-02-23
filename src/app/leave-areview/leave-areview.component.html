@@ -3,7 +3,7 @@
     <img src="/assets/images/huh.png" alt="Left Image" class="side-image" />
   </div>
 <div class="form-container" *ngIf="!submitted">
-    <h2>Leave a Review!</h2>
+    <h2>Tell Us About Your Rejection!</h2>
     <form [formGroup]="userForm" (ngSubmit)="saveInput()">
 
       <label for="companyName">Company Name:</label>
@@ -17,7 +17,7 @@
       <label for="quality">Quality of Rejection</label>
       <div id="quality" class="radio-group">
         <label *ngFor="let num of [1,2,3,4,5]">
-          <input type="radio" [value]="num" formControlName="quality" /> {{ num }}
+          <input type="radio" [value]="num" formControlName="quality" /><span></span> {{ num }}
         </label>
       </div>
       <br /><br />
@@ -25,7 +25,7 @@
       <label for="confidence">Confidence of Last Interview</label>
       <div id="confidence" class="radio-group">
         <label *ngFor="let num of [1,2,3,4,5]">
-          <input type="radio" [value]="num" formControlName="confidence" /> {{ num }}
+          <input type="radio" [value]="num" formControlName="confidence" /> <span></span>{{ num }}
         </label>
       </div>
       <br /><br />
@@ -33,7 +33,7 @@
       <label for="compet">Competitiveness of Role:</label>
       <div id="compet" class="radio-group">
         <label *ngFor="let num of [1,2,3,4,5]">
-          <input type="radio" [value]="num" formControlName="compet" /> {{ num }}
+          <input type="radio" [value]="num" formControlName="compet" /> <span></span>{{ num }}
         </label>
       </div>
       <br /><br />

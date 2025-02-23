@@ -1,5 +1,5 @@
 <body >
-    <div class="company-card" [ngStyle]="{'background-image': 'url(' + randomImage + ')'}">
+    <div (click)="goCompany()" class="company-card" [ngStyle]="{'background-image': 'url(' + randomImage + ')'}">
       <a [routerLink]="['/company', company.name]" class="company-name">{{ company.name }}</a>
       <div class="company-details">
         <div class="detail-item">

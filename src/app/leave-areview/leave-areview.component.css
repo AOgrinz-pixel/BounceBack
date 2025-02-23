@@ -24,17 +24,80 @@
     display: block;  /* Make the label a block element for spacing */
   }
 
-  .radio-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px; /* Space between radio buttons */
-  }
-  
-  .radio-group label {
-    display: flex;
-    align-items: center;
-    gap: 5px; /* Space between radio button and label */
-  }
+/* Radio buttons container */
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Space between radio buttons */
+  margin-top: 10px;
+}
+
+/* Style for each radio button label */
+.radio-group label {
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+  color: #555; /* Slightly darker color for readability */
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease; /* Add hover effects */
+}
+
+.radio-group label:hover {
+  color: #007BFF; /* Change text color on hover */
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Hide the default radio buttons */
+.radio-group input[type="radio"] {
+  display: none;
+}
+
+/* Custom radio button styles */
+.radio-group input[type="radio"] + span {
+  width: 22px;
+  height: 22px;
+  background-color: #fafafa; /* Light background for the circle */
+  border-radius: 50%; /* Circle shape */
+  border: 2px solid #bbb; /* Light border */
+  display: inline-block;
+  position: relative;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Custom radio button effect when checked */
+.radio-group input[type="radio"]:checked + span {
+  background-color: #007BFF; /* Blue color when checked */
+  border-color: #007BFF; /* Blue border */
+}
+
+.radio-group input[type="radio"]:checked + span::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Custom radio button effect when focused */
+.radio-group input[type="radio"]:focus + span {
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2); /* Add a glow effect on focus */
+}
+
+/* Aligning radio button and number text correctly */
+.radio-group label span {
+  margin-right: 8px; /* Add space between radio button and number */
+}
+
+/* Centering the number text next to the radio button */
+.radio-group label {
+  justify-content: center;
+  gap: 8px; /* Spacing between radio and number */
+}
+
   
   input, select, textarea {
     width: 100%;  /* Full width for form fields */
