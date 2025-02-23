@@ -4,7 +4,10 @@
 
 <body>
   <div class="top-image">
-  <div class="search-title">You suck! ... but so does everyone else!</div>
+  <div class="search-title">{{ selectedMessage }}</div>
+
+
+<p>Total Reviews: {{ totalReviewsCount }}</p>
   <!-- Search Bar Section -->
   <div class="search-container">
     <input
@@ -16,6 +19,7 @@
     />
   </div>
 </div>
+
 
   <!-- Companies Display Section -->
   <div *ngIf="filteredCompanies.length > 0" class="companies-list">

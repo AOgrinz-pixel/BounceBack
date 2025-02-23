@@ -1,5 +1,11 @@
+<p class="review-title">{{compName}}</p>
+
 <div>
-    <div *ngFor="let review of companyReviews">
+
+    <h2 class="companyTitle">Companies</h2>
+    <input type="text" [(ngModel)]="searchTerm" (input)="filterReviews()" placeholder="Search by role" />
+
+    <div *ngFor="let review of filteredReviews">
       <app-display-review [review]="review"></app-display-review>
     </div>
   </div>
@@ -15,6 +21,7 @@
   <button class="close-btn" (click)="toggleReviewSlide()">X</button>
 </div>
 
+<app-leave-areview *ngIf="authService.isAuthenticated()", [companyName]= "companyInfo?.name"></app-leave-areview>
 
 <!-- If not authenticated, show a message or a login prompt -->
 <div *ngIf="!authService.isAuthenticated()" class="not-logged-in">
