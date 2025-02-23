@@ -4,6 +4,7 @@ import express from 'express';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import bootstrap from './src/main.server';
+import cor from 'cors';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -20,6 +21,13 @@ export function app(): express.Express {
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });
   // Serve static files from /browser
+
+  server.use(cor({
+    origin: '*', // Allow all origins (not safe for production)
+    methods: 'GET,POST,PUT,DELETE',
+    allowedHeaders: 'Content-Type,Authorization'
+  }));
+
   server.get('*.*', express.static(browserDistFolder, {
     maxAge: '1y'
   }));
@@ -49,7 +57,7 @@ function run(): void {
   // Start up the Node server
   const server = app();
   server.listen(port, () => {
-    console.log(`Node Express server listening on http://localhost:${port}`);
+    console.log(`Node Express server listening on http://3.145.54.26:${port}`);
   });
 }
 

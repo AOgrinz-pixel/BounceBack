@@ -51,7 +51,7 @@ export class HomePageComponent implements OnInit {
 
   // Fetch total reviews from the backend
   getTotalReviews(): void {
-    const url = `http://localhost:8080/reviews/total`;  // Adjust to the actual endpoint for total reviews
+    const url = `http://3.145.54.26:8080/reviews/total`;  // Adjust to the actual endpoint for total reviews
     this.http.get<number>(url).subscribe(
       (response) => {
         this.totalReviewsCount = response; // Store the total reviews count
@@ -80,7 +80,7 @@ export class HomePageComponent implements OnInit {
   }
 
   getCompanies() {
-    this.http.get<any[]>('http://localhost:8080/home') // Ensure the API returns an array
+    this.http.get<any[]>('http://3.145.54.26:8080/home') // Ensure the API returns an array
       .subscribe((data) => {
         this.companies = data; // Assign the response to an array
         console.log(data)

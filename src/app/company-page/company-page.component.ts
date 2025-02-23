@@ -113,7 +113,7 @@ export class CompanyPageComponent implements OnInit {
 
   fetchCompanyData(name: string | null): void {
     // Replace with your actual API endpoint
-    const url = `http://localhost:8080/company/${name}`;
+    const url = `http://3.145.54.26:8080/company/${name}`;
 
 
     this.http.get<any[]>(url).subscribe(data => {

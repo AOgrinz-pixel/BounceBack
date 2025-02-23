@@ -57,7 +57,7 @@ export class LeaveAReviewComponent implements OnInit {
     // Convert the applyAgain value to 'TRUE' or 'FALSE' before sending
     formData.applyAgain = !!this.userForm.value.applyAgain;
 
-    this.http.post('http://localhost:8080/company/review', formData).subscribe(
+    this.http.post('http://3.145.54.26:8080/company/review', formData).subscribe(
       (response) => {
         console.log('API Response:', response); // Handle success response
       },

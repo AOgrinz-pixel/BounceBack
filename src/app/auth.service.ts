@@ -16,7 +16,7 @@ export class AuthService {
   
   login(credentials: { username: string, password: string }): Observable<boolean> {
     console.log(credentials);
-    return this.http.post('http://localhost:8080/login', credentials).pipe(
+    return this.http.post('http://3.145.54.26:8080/login', credentials).pipe(
       map((response: any) => {
         // Handle successful response
         console.log('API Response:', response); 
@@ -38,7 +38,7 @@ export class AuthService {
   }
 
   createUser(credentials: { username: string, password: string }): Observable<boolean> {
-    return this.http.post('http://localhost:8080/login/create', credentials).pipe(
+    return this.http.post('http://3.145.54.26:8080/login/create', credentials).pipe(
       map((response: any) => {
         console.log('User Created:', response); // Handle success response
         console.log(response);

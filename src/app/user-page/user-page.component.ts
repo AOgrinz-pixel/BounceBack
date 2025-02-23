@@ -49,7 +49,7 @@ export class UserPageComponent implements OnInit {
   
   fetchUserData(name: any): void {
     // Replace with your actual API endpoint
-    const url = `http://localhost:8080/user/reviews/${name}`;
+    const url = `http://3.145.54.26:8080/user/reviews/${name}`;
 
     this.http.get<any[]>(url).subscribe(data => {
       this.userData = data;
