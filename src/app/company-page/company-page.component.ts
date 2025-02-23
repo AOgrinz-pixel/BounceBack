@@ -1,19 +1,29 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+
+import { Component, OnInit, NgModule, HostListener } from '@angular/core';
+
 import { ActivatedRoute } from '@angular/router';
 import { HttpClientModule, HttpClient } from '@angular/common/http';  // Assuming you need to make an HTTP request
 import { CommonModule } from '@angular/common';
 import { DisplayReviewComponent } from "./display-review/display-review.component";
 import { LeaveAReviewComponent } from '../leave-areview/leave-areview.component';
 import {AuthService} from "../auth.service";
+import {ReactiveFormsModule} from "@angular/forms";
+import { FormsModule } from '@angular/forms';
+
+@NgModule({
+  imports: [FormsModule],
+})
+export class AppModule {}
 
 @Component({
   selector: 'app-company-page',
   templateUrl: './company-page.component.html',
   styleUrls: ['./company-page.component.css'],
-  imports: [HttpClientModule, DisplayReviewComponent, CommonModule, LeaveAReviewComponent],
+  imports: [HttpClientModule, DisplayReviewComponent, CommonModule, LeaveAReviewComponent, ReactiveFormsModule, FormsModule],
   standalone: true
 })
 export class CompanyPageComponent implements OnInit {
+
 
   topPosition: string = '100vh';
     transformStyle: string = 'rotate(0deg)';  // Initial rotation
@@ -47,6 +57,10 @@ export class CompanyPageComponent implements OnInit {
   companyInfo: any;
   compName: string = ''
 
+  filteredReviews: any[] = [];
+  searchTerm: string = '';
+
+
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient,
@@ -64,23 +78,44 @@ export class CompanyPageComponent implements OnInit {
 
   }
 
-  fetchCompanyData(name: any): void {
+
+  fetchCompanyData(name: string | null): void {
     // Replace with your actual API endpoint
     const url = `http://localhost:8080/company/${name}`;
 
 
     this.http.get<any[]>(url).subscribe(data => {
       this.companyData = data;
+
       this.companyInfo = this.companyData.company;
       this.companyReviews = this.companyData.reviews;
       this.compName = name;
       console.log(this.companyReviews);
+
     });
+  }
+
+  // Filter reviews based on the role attribute
+  filterReviews() {
+    if (this.searchTerm.trim() === '') {
+      // If search term is empty, show all reviews
+      this.filteredReviews = this.companyReviews;
+    } else {
+      // Otherwise, filter reviews based on the role
+      this.filteredReviews = this.companyReviews.filter(review =>
+        review.role.toLowerCase().includes(this.searchTerm.toLowerCase())
+      );
+    }
   }
 
   showReviewSlide = false;
 
   toggleReviewSlide() {
     this.showReviewSlide = !this.showReviewSlide;
+  }
+
+
+  // Watch for changes in searchTerm and filter reviews
+  ngOnChanges() {
   }
 }
