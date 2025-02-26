@@ -1,7 +1,7 @@
 # Bounce Back
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
-This project wasw created for BoilerMake XII Hackathon and used generative AI to expidite website design allowing developers to focus on TypeScript, Backend, and cloud implementation. 
+This project was created for BoilerMake XII Hackathon and used generative AI to expidite website design allowing developers to focus on TypeScript, Backend, and cloud implementation. 
 
 ## Development server
 
